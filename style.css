@@ -1,0 +1,247 @@
+@import url(//db.onlinewebfonts.com/c/2d5f91cbc8faa21103d08ce9d19040d6?family=ChangelingNeoW01-Bold);
+
+@font-face {font-family: "ChangelingNeoW01-Bold"; src: url("//db.onlinewebfonts.com/t/2d5f91cbc8faa21103d08ce9d19040d6.eot"); src: url("//db.onlinewebfonts.com/t/2d5f91cbc8faa21103d08ce9d19040d6.eot?#iefix") format("embedded-opentype"), url("//db.onlinewebfonts.com/t/2d5f91cbc8faa21103d08ce9d19040d6.woff2") format("woff2"), url("//db.onlinewebfonts.com/t/2d5f91cbc8faa21103d08ce9d19040d6.woff") format("woff"), url("//db.onlinewebfonts.com/t/2d5f91cbc8faa21103d08ce9d19040d6.ttf") format("truetype"), url("//db.onlinewebfonts.com/t/2d5f91cbc8faa21103d08ce9d19040d6.svg#ChangelingNeoW01-Bold") format("svg"); }
+
+
+* {
+    scroll-behavior: smooth;
+}
+html {
+}
+body {
+    font-family: 'Open Sans Condensed', Verdana, Geneva, Tahoma, sans-serif;
+    height: 100%;
+    margin: auto;
+}
+main {
+    position: "relative";
+    text-align: center;
+    min-width: 300px;
+}
+a {
+    color: black;
+    text-decoration: none;
+  }
+.not-loaded {
+    opacity: 0;
+}
+.passive {
+    position: relative !important;
+    top: -1111px !important;
+    z-index: -1 !important;
+}
+
+/* <<<<< HEADER >>>>> */
+.title-container {
+    display: grid;
+    grid-template-columns: 1fr 4fr 1fr;
+    border-bottom: 1px solid rgb(83, 56, 15);
+    right: 10px;
+    left: 0px;
+    top: 0px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    position: fixed;
+    width: 100%;
+    background-color: white;
+    min-width: 300px;
+    z-index: 1000;
+}
+#title, .title {
+    font-family: "ChangelingNeoW01-Bold";
+    font-size: 25px;
+    grid-column-start: 2;
+    text-align: center;
+}
+#menu-btn {
+    position: absolute;
+    left: 90%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%); 
+    -webkit-transform: translate(-50%, -50%); 
+    cursor: pointer;
+}
+#menu-btn:hover > img {
+    padding: 5px;
+    border: 1px solid black;
+}
+#newsletter {
+    grid-column-start: 3;
+    margin-top: -25px;
+    font-size: 18px;
+}
+.nav-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    width: 100%;
+    padding: 10px;
+    right: 0px;
+    left: 0px;
+    top: 60px;
+    padding-left: 10%;
+    font-size: 14px;
+    text-align: center;
+    border-bottom: 0px solid rgb(128, 128, 128);
+    box-shadow: 0px 2px 2px -2px gray;
+    position: fixed;
+    transition: top 2s;
+    background-color: white;
+    z-index: 9;
+}
+.nav-item:hover, #newsletter:hover {
+    color: black;
+    font-weight: bold;
+} 
+
+/* <<<<< MAIN >>>>> */
+.main {
+    padding-top: 120px;
+    padding-bottom: 80px;
+}
+.main-title {
+    position: relative;
+    border-top: 1px rgba(128, 128, 128, 0.24) solid;
+    border-bottom: 1px rgb(128, 128, 128, 0.24) solid;
+    padding: 15px;
+    margin-bottom: 65px;
+    font-size: 25px;
+}
+#prime-title, .main-sec-title {
+    font-family: 'Playfair Display', serif;
+    padding: 10px;
+    font-size: 22px;
+}
+.main-p {
+    color: rgb(88, 87, 87);
+    position: relative;
+    text-align: left;
+    padding-left: 20px;
+    font-size: 13px;
+}
+@media screen and (max-width: 768px) {
+    .main {
+        padding-top: 50px;
+        padding-bottom: 30px;
+    }
+}
+/* <<<<< PRIME >>>>> */
+.prime-img-container {
+    width: 80%;
+    padding-right: 10%;
+    padding-left: 10%;
+}
+.prime-img {
+    object-fit: cover;
+    width: 100%;
+}
+.subscribe {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: stretch;
+}
+@media screen and (max-width: 990px) {
+.subscribe-a {
+    margin: 20px;
+}   
+}
+.btn {
+    padding: 10px;
+    margin: 20px;
+    width: 200px;
+    border: 1px solid #ccc;
+    border-radius: 2px;
+    color: white;
+    background-color: rgb(94, 92, 92);
+}
+/* <<<<< LINKS >>>>> */
+.links {
+    background-color: rgba(247, 247, 247, 0.815);
+    width: 100%;
+}
+.links-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    column-gap: 20px;
+    padding: 20px;
+    padding-top: 0px;
+    margin-top: -30px;
+    height: auto;
+    text-align: left;
+}
+.link-item {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    column-gap: 20px;
+
+}
+.link-img-container {
+}
+.link-img {
+    object-fit: cover;
+    height: 90px;
+    width: 90px;
+}
+.link-p {
+    color: grey;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+.link-title {
+    margin-top: 0;
+}
+
+/* <<<<< NEWSLETTER PAGE >>>>> */
+#newsletter-page-title {
+    font-size: 30px;
+    margin-top: 20px;
+    margin-left: -20%;
+}
+.newsletter-page-container {
+    border: 1px solid #ccc;
+    border-radius: 2px;
+    padding-bottom: 20px;
+    padding-left: 30px;
+    background-color: white;
+}
+#email-input, #email-btn {
+   border: 1px solid #ccc;
+   border-radius: 2px;
+   height: 40px;
+}
+#email-input {
+   margin-top: 10px;
+   margin-left: -15%;
+   width: 280px;
+   padding: 10px;
+}
+#email-btn {
+   color: white;
+   background-color: rgb(94, 92, 92);
+}
+.newsletter-tooltip-container {
+    border: 1px solid #ccc;
+    border-radius: 2px;
+    padding: 20px;
+    background-color: white;
+}
+#tooltip-email-input, #tooltip-email-submit {
+   border: 1px solid #ccc;
+   border-radius: 2px;
+   height: 40px;
+}
+#tooltip-email-input {
+    width: 250px;
+    margin-top: 10px;
+}
+#tooltip-email-submit {
+    color: white;
+    background-color: rgb(94, 92, 92);
+ }#tooltip-email-submit:hover, .btn:hover {
+    background-color: black;
+    transition: background-color 1s;
+ }
+#newsletter-tooltip-title {
+    font-size: 30px;
+}
