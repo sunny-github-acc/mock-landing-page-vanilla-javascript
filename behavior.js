@@ -2,12 +2,15 @@
 
     let newsletter = document.body.querySelector("#newsletter"),
         menuBtn = document.body.querySelector("#menu-btn"),
-        nav = document.body.querySelector(".nav-container");
+        nav = document.body.querySelector(".nav-container"),
+        footerMore = document.body.querySelectorAll(".footer-more");
         
     document.addEventListener("scroll", handleIsNav);
     document.addEventListener("scroll", handleIsImg);
     window.addEventListener("load", handleWindowLoad);
-    window.addEventListener("resize", handleResize);
+    window.addEventListener("resize", handleNav);
+    window.addEventListener("resize", handleFooter);
+    footerMore[0].parentElement.addEventListener("click", handleFooterMore);
     newsletter.addEventListener("mouseenter", handleShowNewsletter);
     newsletter.addEventListener("mouseleave", handleHideNewsletter);
 
@@ -57,10 +60,11 @@
 
     function handleWindowLoad() {
         handleIsImg();
-        handleResize();
+        handleNav();
+        handleFooter();
     }
     
-    function handleResize() {
+    function handleNav() {
         if (window.innerWidth > 768) {
             nav.classList.remove("passive");
             menuBtn.classList.add("passive");
@@ -73,6 +77,39 @@
         }
     }
 
+    function handleFooter() {
+        if (window.innerWidth < 768) {
+            for (let i of footerMore) {
+            let up = i.querySelector(".up"),
+                down = i.querySelector(".down"),
+                list = i.querySelector(".footer-more-list");
+                up.hidden = true;
+                down.hidden = false;
+                list.hidden = true;
+            }
+        } else {
+            for (let i of footerMore) {
+                let up = i.querySelector(".up"),
+                    down = i.querySelector(".down"),
+                    list = i.querySelector(".footer-more-list");
+                    up.hidden = true;
+                    down.hidden = true;
+                    list.hidden = false;
+            }
+        }
+    }
+
+    function handleFooterMore(e) {
+        let elem = e.target.closest("a");
+        if (elem === null) return;
+        let up = elem.querySelector(".up"),
+            down = elem.querySelector(".down"),
+            list = elem.parentNode.parentNode.querySelector(".footer-more-list");
+            up.hidden = !up.hidden;
+            down.hidden = !down.hidden;
+            list.hidden = !list.hidden;
+        window.scrollBy(0, 300);
+    }
 
     function handleShowNewsletter() {
         let tooltip = document.createElement("div");
