@@ -1,18 +1,66 @@
 'use strict';
 
-    let newsletter = document.body.querySelector("#newsletter"),
-        menuBtn = document.body.querySelector("#menu-btn"),
-        nav = document.body.querySelector(".nav-container"),
-        footerMore = document.body.querySelectorAll(".footer-more");
+    let nav = document.body.querySelector(".nav-container"),
+        footerMore = document.body.querySelectorAll(".footer-more"),
+        newsletter = document.body.querySelector("#newsletter");
         
-    document.addEventListener("scroll", handleIsNav);
-    document.addEventListener("scroll", handleIsImg);
     window.addEventListener("load", handleWindowLoad);
+    window.addEventListener("load", handleLoading);
     window.addEventListener("resize", handleNav);
     window.addEventListener("resize", handleFooter);
+    document.addEventListener("scroll", handleIsNav);
+    document.addEventListener("scroll", handleIsImg);
     footerMore[0].parentElement.addEventListener("click", handleFooterMore);
     newsletter.addEventListener("mouseenter", handleShowNewsletter);
     newsletter.addEventListener("mouseleave", handleHideNewsletter);
+
+
+    function handleWindowLoad() {
+        handleIsImg();
+        handleNav();
+        handleFooter();
+        handleLoading();
+    }
+
+    function handleLoading() {
+        document.body.querySelector("#loading").hidden = true;        
+    }
+    
+    function handleNav() {
+        let menuBtn = document.body.querySelector("#menu-btn");
+        if (window.innerWidth > 768) {
+            nav.classList.remove("passive");
+            menuBtn.classList.add("passive");
+            newsletter.classList.remove("passive");
+        }
+        if (window.innerWidth < 768) {
+            nav.classList.add("passive");
+            newsletter.classList.add("passive");
+            menuBtn.classList.remove("passive");
+        }
+    }
+
+    function handleFooter() {
+        if (window.innerWidth < 768) {
+            for (let i of footerMore) {
+            let up = i.querySelector(".up"),
+                down = i.querySelector(".down"),
+                list = i.querySelector(".footer-more-list");
+                up.hidden = true;
+                down.hidden = false;
+                list.hidden = true;
+            }
+        } else {
+            for (let i of footerMore) {
+                let up = i.querySelector(".up"),
+                    down = i.querySelector(".down"),
+                    list = i.querySelector(".footer-more-list");
+                    up.hidden = true;
+                    down.hidden = true;
+                    list.hidden = false;
+            }
+        }
+    }
 
     function handleIsNav(e) {
         if (this.oldScroll < window.scrollY) {
@@ -58,50 +106,9 @@
         }
     }
 
-    function handleWindowLoad() {
-        handleIsImg();
-        handleNav();
-        handleFooter();
-    }
-    
-    function handleNav() {
-        if (window.innerWidth > 768) {
-            nav.classList.remove("passive");
-            menuBtn.classList.add("passive");
-            newsletter.classList.remove("passive");
-        }
-        if (window.innerWidth < 768) {
-            nav.classList.add("passive");
-            newsletter.classList.add("passive");
-            menuBtn.classList.remove("passive");
-        }
-    }
-
-    function handleFooter() {
-        if (window.innerWidth < 768) {
-            for (let i of footerMore) {
-            let up = i.querySelector(".up"),
-                down = i.querySelector(".down"),
-                list = i.querySelector(".footer-more-list");
-                up.hidden = true;
-                down.hidden = false;
-                list.hidden = true;
-            }
-        } else {
-            for (let i of footerMore) {
-                let up = i.querySelector(".up"),
-                    down = i.querySelector(".down"),
-                    list = i.querySelector(".footer-more-list");
-                    up.hidden = true;
-                    down.hidden = true;
-                    list.hidden = false;
-            }
-        }
-    }
-
     function handleFooterMore(e) {
         let elem = e.target.closest("a");
-        if (elem === null) return;
+        if (elem.closest("p") === null) return;
         let up = elem.querySelector(".up"),
             down = elem.querySelector(".down"),
             list = elem.parentNode.parentNode.querySelector(".footer-more-list");
@@ -134,7 +141,7 @@
 
         
         tooltip.style.position = "fixed";
-        tooltip.style.top = 55 + "px";
+        tooltip.style.top = "15%";
         tooltip.style.left = window.innerWidth - tooltip.offsetWidth - 25 + "px";
 
         function handleTooltipMouseOver() {
@@ -151,7 +158,7 @@
             e.target.querySelector("#tooltip-email-input").value)
             if (e.target.querySelector("#tooltip-email-input").value === "") return;
             tooltip.innerHTML = `<div class="newsletter-tooltip-container">
-            <div class="" id="newsletter-tooltip-title">Jūs sėkmingai užsiregistravote šiuo adresu: ${this.querySelector("#tooltip-email-input").value}</div>`;
+            <div class="" id="newsletter-tooltip-title">Sėkmingai užsiregistravote!</div>`;
             
         }
     }
