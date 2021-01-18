@@ -108,7 +108,7 @@
 
     function handleFooterMore(e) {
         let elem = e.target.closest("a");
-        if (elem.closest("p") === null) return;
+        if (elem === null || elem.closest(".footer-title") === null || window.innerWidth > 768) return;
         let up = elem.querySelector(".up"),
             down = elem.querySelector(".down"),
             list = elem.parentNode.parentNode.querySelector(".footer-more-list");

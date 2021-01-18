@@ -2,14 +2,13 @@
 <head>
     <meta charset="UTF-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <title>spintos laboratorija</title>
-    <link rel="stylesheet" href="style.css"></link>
-    <link rel="stylesheet" href="/node_modules/@fortawesome/fontawesome-free/css/all.css">
     <link rel="shortcut icon" type="image/x-icon" href="images/favicon.png"></link>
-    <link rel="preconnect" href="https://fonts.gstatic.com"></link>
+    <link rel="stylesheet" href="style.css"></link>
+    <link rel="stylesheet" href="/node_modules/@fortawesome/fontawesome-free/css/all.css"></link>
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans+Condensed:wght@300&display=swap" rel="stylesheet"></link>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap" rel="stylesheet"></link>
     <link href="//db.onlinewebfonts.com/c/2d5f91cbc8faa21103d08ce9d19040d6?family=ChangelingNeoW01-Bold" rel="stylesheet" type="text/css"></link>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap" rel="stylesheet">
+    <title>spintos laboratorija</title>
 </head>
 
 <body>
@@ -23,70 +22,60 @@
             <div class="passive" id="newsletter"><a href="#">Naujienlaiškis</a></div>
         </div>
 
-        <nav class="nav-container">
-            <a href="pages/stilius.html" id="stilius" class="nav-item">STILIUS</a>
-            <a href="pages/kultura.html" id="kultura" class="nav-item">KULTŪRA</a>
-            <a href="pages/spinta.html" id="spinta" class="nav-item">SPINTA</a>
-            <a href="pages/dovanu_idejos.html" id="dovanu_idejos" class="nav-item">DOVANŲ IDĖJOS</a>
+        <nav>
+            <ul class="nav-container">
+                <li id="stilius" class="nav-item"><a href="pages/stilius.html">STILIUS</a></li>
+                <li id="kultura" class="nav-item"><a href="pages/kultura.html">KULTŪRA</a></li>
+                <li id="spinta" class="nav-item"><a href="pages/spinta.html">SPINTA</a></li>
+                <li id="dovanu_idejos" class="nav-item"><a href="pages/dovanu_idejos.html">DOVANŲ IDĖJOS</a></li>
+            </ul>
         </nav>
     </header>
 
-    <main>
-        <div class="main">
-            <div class="prime-container">
-                <div class="prime-item">
-                    <div class="prime-img-container">
-                        <a href="#">
-                            <img class="prime-img not-loaded" 
-                            data-src="images/feathers.jpg" 
-                            alt="woman">
-                            <div id="prime-title">
-                                <h2>Laimė yra kiekvienoje tavo akimirkoje</h2>
-                            </div>  
-                        </a>  
-                    </div>
-                </div>
-                <div class="main-title subscribe">
-                    <div class="subscribe-text">
-                        Užsisakykite naujausią mūsų rinkinį su <strong>10%</strong> nuolaida
-                    </div>
-                    <div class="subscribe-a">
-                        <a href="#"><span class="btn"><strong>UŽSISAKYTI</strong></span></a>
-                    </div>
+    <main class="main">
+        <section class="prime-container">
+            <div class="prime-item">
+                <div class="prime-img-container">
+                    <a href="#">
+                        <img class="prime-img not-loaded" 
+                        data-src="images/feathers.jpg" 
+                        alt="feathers">
+                        <div id="prime-title"><h1>Laimė yra kiekvienoje tavo akimirkoje</h1></div> 
+                        <div id="prime-sec-title"><h2>Mes vis pamirštam, kad dažniausiai esame pasiruošę šiai
+                            akimirkai. Dar daugiau, mūsų laimė slypi kiekvienoje iš jų. Priminkite sau apie
+                            tai skaitydami toliau...</h2>
+                        </div>  
+                    </a>  
                 </div>
             </div>
+            <div class="main-title subscribe">
+                <div class="subscribe-text">
+                    Užsisakykite naujausią mūsų rinkinį su <strong>10%</strong> nuolaida
+                </div>
+                <div class="subscribe-a">
+                    <a href="#"><span class="btn"><strong>UŽSISAKYTI</strong></span></a>
+                </div>
+            </div>
+        </section>
 
-            <div class="links">
-                <div class="main-title">DIENOS EKSPERIMENTAI</div>
-                <div class="links-container">
-                    <a class="link-item" target="_blank" href="https://ideas-block.com">
+        <section class="links">
+            <div class="main-title">DIENOS EKSPERIMENTAI</div>
+            <div class="links-container">
+                <div class="link-item">
+                    <a target="_blank" href="https://ideas-block.com">
                         <div class="link-img-container">
                                 <img class="link-img not-loaded" 
                                 data-src="https://renginiai.kasvyksta.lt/uploads/places/4509/ideasblock.jpg" 
                                 alt="ideasblock img">
-                        </div>   
+                        </div>
                         <div class="link-titles">
                             <p class="link-p">vietos</p>
                             <div class="link-title">Ideas Block - kūrybinė erdvė ir kavinė</div>
                         </div>
-                    </a> 
-<!--                     
-                    <div class="link-item">
-                        <div class="link-img-container">
-                            <a target="_blank" href="https://www.okt.lt/zoom-teatre-oskaro-korsunovo-ir-mariaus-ivaskeviciaus-alpulys-pagal-svetlana-aleksijevic/">
-                                <img class="link-img not-loaded" 
-                                data-src="https://www.okt.lt/wp-content/uploads/2014/01/okt-logo-kvadraciukas-550x550.jpg" 
-                                alt="okt img">
-                            </a>
-                        </div>   
-                        <div class="link-titles">
-                            <div class="link-title">Oskaro Koršunovo ir
-                                Mariaus Ivaškevičiaus „Alpulys“</div>
-                            <p class="link-p">renginiai</p>
-                        </div>
-                    </div> -->
-                    
-                    <a class="link-item" target="_blank" href="https://www.nebegeda.lt/sultys-dazniausios-seksualines-fantazijos-ir-ar-verta-jas-igyvendinti/">
+                    </a>
+                </div>
+                <div class="link-item">
+                    <a target="_blank" href="https://www.nebegeda.lt/sultys-dazniausios-seksualines-fantazijos-ir-ar-verta-jas-igyvendinti/">
                         <div class="link-img-container">
                             <img class="link-img not-loaded" 
                                 data-src="https://www.nebegeda.lt/wp-content/uploads/2018/07/sultys-cover-final-300x300.jpg" 
@@ -98,7 +87,8 @@
                                 ir ar verta jas įgyvendinti</div>
                         </div>
                     </a>
-                    
+                </div>
+                <div class="link-item">
                     <a class="link-item" target="_blank" href="https://www.vogue.com/article/a-tribute-to-stella-tennant">
                         <div class="link-img-container">
                             <img class="link-img not-loaded" 
@@ -112,19 +102,14 @@
                     </a>
                 </div>
             </div>
-        </div>
-
-        <div hidden><br>
-            puslapiu turinys
-            Naujienlaiskio psl
-        </div>
+        </section>
     </main>
     
     <footer>
-        <div class="footer">
+        <section class="footer">
             <div class="footer-about">
                 <div id="footer-title" class="title"><a href="#">spintos laboratorija</a></div>
-                <p class="footer-describtion">Rankų darbo jaukumas šiuolaikiniame mados pasaulyje</p>
+                <div class="footer-describtion">Rankų darbo jaukumas šiuolaikiniame mados pasaulyje</div>
                 <ul class="fabs">
                     <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
                     <li><a href="#"><i class="fab fa-twitter"></i></a></li>
@@ -133,13 +118,13 @@
                 </ul>
             </div>
             <div class="footer-more">
-                <p class="footer-title">
+                <div class="footer-title">
                     <a href="#" onclick="return false;">
                         Daugiau iš spintos laboratorijos
                         <span class="up" hidden><i class="fas fa-caret-up" style="padding-left: 10px"></i></span>
                         <span class="down" hidden><i class="fas fa-caret-down" style="padding-left: 10px"></i></span>
                     </a>
-                </p>
+                </div>
                 <ur class="footer-more-list">
                     <li><a href="#">Naujienlaiškis</a></li>
                     <li><a href="#">Susisiekite</a></li>
@@ -148,13 +133,13 @@
                 </ur>
             </div>
             <div class="footer-more">
-                <p class="footer-title">
+                <div class="footer-title">
                     <a href="#" onclick="return false;">
                         Visos skiltys
                         <span class="up" hidden><i class="fas fa-caret-up" style="padding-left: 10px"></i></span>
                         <span class="down" hidden><i class="fas fa-caret-down" style="padding-left: 10px"></i></span>
                     </a>
-                </p>
+                </div>
                 <ur class="footer-more-list">
                     <li><a href="#">Stilius</a></li>
                     <li><a href="#">Kultūra</a></li>
@@ -162,7 +147,7 @@
                     <li><a href="#">Dovanų idėjos</a></li>
                 </ur>
             </div>
-        </div>
+        </section>
         <div id="sunnyKK">© 2021 sunnyKK. Visos teisės saugomos.</div>
     </footer>
 

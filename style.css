@@ -17,6 +17,14 @@ main {
     text-align: center;
     min-width: 300px;
 }
+h1 {
+    font-size: 30px;
+    font-weight: normal;
+}
+h2 {
+    font-size: 18px;
+    font-weight: normal;
+}
 a {
     color: black;
     text-decoration: none;
@@ -105,6 +113,7 @@ li {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
     grid-template-areas: ". elem1 elem2 elem3 elem4 .";
+    position: fixed;
     width: 100%;
     right: 0px;
     left: 0px;
@@ -113,10 +122,12 @@ li {
     text-align: center;
     border-bottom: 0px solid rgb(128, 128, 128);
     box-shadow: 0px 2px 2px -2px gray;
-    position: fixed;
     transition: top 1s ease-in;
     background-color: white;
     z-index: 9;
+    padding-bottom: 5px;
+    padding-top: 5px;
+    margin-top: 0px;
 }
 #stilius {
     grid-area: elem1;
@@ -153,10 +164,16 @@ li {
     margin-bottom: 65px;
     font-size: 25px;
 }
-#prime-title, .main-sec-title {
+#prime-title {
     font-family: 'Playfair Display', serif;
     padding: 10px;
-    font-size: 22px;
+    padding-bottom: 0px;
+    font-size: 30px;
+}
+#prime-sec-title {
+    padding-left: 10%;
+    padding-bottom: 40px;
+    width: 80%;
 }
 .main-p {
     color: rgb(88, 87, 87);
@@ -217,7 +234,7 @@ li {
     height: auto;
     text-align: left;
 }
-.link-item {
+.link-item a {
     display: grid;
     grid-template-columns: 1fr 2fr;
     column-gap: 20px;
@@ -369,3 +386,60 @@ li {
 #newsletter-tooltip-title {
     font-size: 30px;
 }
+
+/*
+
+refactor html tags
+
+
+-webkit-box-align: center;
+    -ms-flex-align: center;
+        align-items: center;
+
+        
+-webkit-box-pack: justify;
+-ms-flex-pack: justify;
+    justify-content: space-between;
+
+    
+display: -webkit-box;
+display: -ms-flexbox;
+display: flex;
+
+
+background-image: linear-gradient(to right, #4e5385, #2bb7da);
+
+
+button::before, .button::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: rgba(187, 22, 22, 0.25);
+    -webkit-transition: opacity 150ms ease-in-out;
+    transition: opacity 150ms ease-in-out;
+}
+
+button:hover::before, .button:hover::before {
+    opacity: 1;
+}
+
+
+
+.hdeader.open .header__toggle > span:first-child {
+    -webkit-transform: rotate(45deg);
+            transform: rotate(45deg);
+}
+
+.header.open .headerd__toggle > span:nth-child(2) {
+    opacity: 0;
+}
+
+.header.open .header__toggle > span:last-child {
+    -webkit-transform: rotate(-45deg);
+            transform: rotate(-45deg);
+}
+
+*/
