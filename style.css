@@ -19,7 +19,7 @@ main {
 }
 h1 {
     font-size: 40px;
-    margin-top: 0;
+    margin: 0;
     font-weight: normal;
 }
 h2 {
@@ -181,10 +181,11 @@ li {
     grid-template-areas: 
     "m-1 m-2 m-3"
     "m-4 m-2 m-5";
-    grid-template-columns: 1fr 3fr 1fr;
+    grid-template-columns: 2fr 3fr 2fr;
     column-gap: 25px;
     padding: 40px;
     padding-top: 0;
+    margin-bottom: 20px;
 }
 #main-1 {
     grid-area: m-1;
@@ -209,7 +210,10 @@ li {
 }
 .article-title {
     text-align: left;
-    padding-left: 20px;
+}
+.article-title h1 {
+    text-align: left;
+    margin-bottom: 10px; 
 }
 .article-title h2 {
     margin-top: 0;  
@@ -226,9 +230,12 @@ li {
     color: rgb(87, 87, 87);
     position: relative;
     text-align: left;
-    padding-left: 20px;
     margin-bottom: 0;  
     font-size: 18px;
+}
+.side-img {
+    max-height: 200px;
+    object-fit: cover;
 }
 #prime-title {
     font-family: 'Playfair Display', serif;
