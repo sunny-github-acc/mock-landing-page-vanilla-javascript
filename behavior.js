@@ -1,6 +1,6 @@
 'use strict';
 
-import * as content from "./js/content.js";
+import { handleContent } from "./js/content.js";
 
 let nav = document.body.querySelector(".nav-container"),
     footerMore = document.body.querySelectorAll(".footer-more"),
@@ -8,7 +8,7 @@ let nav = document.body.querySelector(".nav-container"),
     
 window.addEventListener("DOMContentLoaded", handleWindowLoad);
 window.addEventListener("DOMContentLoaded", handleLoading);
-window.addEventListener("DOMContentLoaded", content.handleContent);
+window.addEventListener("DOMContentLoaded", handlePageContent);
 window.addEventListener("resize", handleNav);
 window.addEventListener("resize", handleFooter);
 document.addEventListener("scroll", handleIsNav);
@@ -22,12 +22,18 @@ function handleWindowLoad() {
     handleNav();
     handleFooter();
     handleLoading();
-    content.handleContent();
 }
 
 function handleLoading() {
-    document.body.querySelector("#loading").hidden = true;        
+    document.body.querySelector("#loading").hidden = true;
 }
+
+function handlePageContent() {
+    document.querySelector(".main-content") ?
+        handleContent().then(() => handleWindowLoad()) : 
+        null;
+}
+
 
 function handleNav() {
     let menuBtn = document.body.querySelector("#menu-btn");
