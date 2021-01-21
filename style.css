@@ -5,12 +5,14 @@
 
 * {
     scroll-behavior: smooth;
+    margin: auto;
+    padding: 0;
+    box-sizing: border-box;
 }
 body {
     font-family: 'Open Sans Condensed', Verdana, Geneva, Tahoma, sans-serif;
     height: 100%;
     margin: auto;
-    
 }
 main {
     position: "relative";
@@ -29,7 +31,7 @@ h2 {
     font-weight: normal;
 }
 h3 {
-    font-size: 18px;
+    font-size: 20px;
     font-weight: normal;
 }
 a {
@@ -63,6 +65,10 @@ li {
     position: relative !important;
     top: -1111px !important;
     z-index: -1 !important;
+    height: 0;
+}
+.invisible {
+    opacity: 0;
 }
 .btn {
     padding: 10px;
@@ -86,7 +92,6 @@ li {
     display: grid;
     grid-template-columns: 1fr 4fr 1fr;
     border-bottom: 1px solid rgb(83, 56, 15);
-    right: 10px;
     left: 0px;
     top: 0px;
     padding-top: 15px;
@@ -104,7 +109,7 @@ li {
     text-align: center;
     user-select: none;
 }
-#menu-btn {
+.menu-wrap {
     position: absolute;
     left: 90%;
     top: 50%;
@@ -112,10 +117,6 @@ li {
     -ms-transform: translate(-50%, -50%); 
     -webkit-transform: translate(-50%, -50%); 
     cursor: pointer;
-}
-#menu-btn:hover > img {
-    padding: 5px;
-    border: 1px solid black;
 }
 #newsletter {
     grid-column-start: 3;
@@ -141,6 +142,7 @@ li {
     z-index: 9;
     padding-bottom: 5px;
     padding-top: 5px;
+    padding-left: 0;
     margin-top: 0px;
 }
 #stilius {
@@ -158,7 +160,107 @@ li {
 .nav-item:hover, #newsletter:hover {
     color: black;
     font-weight: bold;
+}
+.menu-passive {
+    width: 100%;
+    height: 100%;
+    top: -100%;
+    margin: 0;
+    padding: 0;
+    position: fixed;
+    background-color: white;
+    -webkit-transition: all 1s;
+    transition: all 1s;
+    z-index: 1;    
 } 
+.menu-ul {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.menu-active {
+    top: 0;
+    -webkit-transition: all 1s;
+    transition: all 1s;
+}
+.menu-nav-item {
+    padding: 20px;
+}
+
+
+/* <<<<< MENU >>>>> */
+.menu-wrap .toggler {
+    position: absolute;
+    top: -30px;
+    left: -25px;
+    z-index: 2;
+    cursor: pointer;
+    width: 50px;
+    height: 50px;
+    opacity: 0;
+}
+
+.menu-wrap .menu-btn {
+    position: absolute;
+    top: -30px;
+    left: -30px;
+    z-index: 1;
+    width: 60px;
+    height: 60px;
+    padding: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.menu-wrap .menu-btn > div {
+    position: relative;
+    width: 100%;
+    height: 2px;
+    background: black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.4s ease;
+}
+
+.menu-wrap .menu-btn > div::before,
+.menu-wrap .menu-btn > div::after {
+    content: '';
+    position: absolute;
+    z-index: 1;
+    top: -10px;
+    width: 100%;
+    height: 2px;
+    background: inherit;
+}
+
+.menu-wrap .menu-btn > div::after {
+    top: 10px;
+}
+
+.menu-wrap .toggler:checked + .menu-btn > div {
+transform: rotate(135deg);
+}
+
+.menu-wrap .toggler:checked + .menu-btn > div:before,
+.menu-wrap .toggler:checked + .menu-btn > div:after {
+    top: 0;
+    transform: rotate(90deg);
+}
+
+/* Rotate On Hover When Checked */
+/*
+.menu-wrap .toggler:checked:hover + .menu-btn > div {
+transform: rotate(315deg);
+}
+
+.menu-wrap .toggler:hover + .menu-btn > div {
+    transform: rotate(-180deg);
+}
+*/
+
 @media screen and (max-width: 768px) {
     .nav-container {
         padding: 0;
@@ -166,14 +268,8 @@ li {
 }
 
 /* <<<<< PRIME >>>>> */
-.prime-img-container {
-    width: 60%;
-    padding-right: 20%;
-    padding-left: 20%;
-}
 .prime-img {
-    object-fit: cover;
-    width: 100%;
+    max-width: 80%;
 }
 .subscribe {
     display: -webkit-box;
@@ -187,6 +283,9 @@ li {
     -ms-flex-align: center;
     align-items: center;
 }
+.subscribe-text, .subscribe-a {
+    margin: 0;
+}
 @media screen and (max-width: 990px) {
     .subscribe-a {
         margin: 20px;
@@ -194,10 +293,7 @@ li {
 }
 @media screen and (max-width: 768px) {
     .prime-img-container {
-        width: 80%;
-        padding-right: 10%;
-        padding-left: 10%;
-        padding-top: 20px;
+        padding-top: 70px;
     }   
 }
 
@@ -269,14 +365,15 @@ li {
 }
 #prime-title {
     font-family: 'Playfair Display', serif;
-    padding: 10px;
+    width: 90%;
+    padding-top: 10px;
     padding-bottom: 0px;
     font-size: 30px;
 }
 #prime-sec-title {
-    padding-left: 10%;
     padding-bottom: 40px;
     width: 80%;
+    padding-top: 10px;
 }
 
 @media screen and (max-width: 768px) {
@@ -316,7 +413,7 @@ li {
     display: grid;
     grid-template-columns: 1fr 2fr;
     column-gap: 20px;
-
+    width: 100%;
 }
 .link-img {
     object-fit: cover;
@@ -328,6 +425,9 @@ li {
     color: grey;
     margin-top: 0;
     margin-bottom: 0;
+}
+.link-titles {
+    margin: 0;
 }
 .link-title {
     margin-top: 0;
@@ -422,6 +522,7 @@ li {
 
 
 /* <<<<< NEWSLETTER PAGE >>>>> */
+/*
 #newsletter-page-title {
     font-size: 30px;
     margin-top: 20px;
@@ -475,4 +576,5 @@ li {
  }
 #newsletter-tooltip-title {
     font-size: 30px;
-}
+} 
+*/
