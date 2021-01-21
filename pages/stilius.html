@@ -2,40 +2,98 @@
 <head>
     <meta charset="UTF-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <title>spintos laboratorija</title>
+    <link rel="shortcut icon" type="image/x-icon" href="images/favicon.png"></link>
     <link rel="stylesheet" href="../style.css"></link>
-    <link rel="preconnect" href="https://fonts.gstatic.com"></link>
+    <link rel="stylesheet" href="/node_modules/@fortawesome/fontawesome-free/css/all.css"></link>
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans+Condensed:wght@300&display=swap" rel="stylesheet"></link>
-    <link href="//db.onlinewebfonts.com/c/f99da0cc089925103ee1ecbcf5758240?family=Bodoni+SvtyTwo+ITC+TT" rel="stylesheet" type="text/css"></link>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap" rel="stylesheet"></link>
     <link href="//db.onlinewebfonts.com/c/2d5f91cbc8faa21103d08ce9d19040d6?family=ChangelingNeoW01-Bold" rel="stylesheet" type="text/css"></link>
+    <title>spintos laboratorija</title>
 </head>
 <body>
     <header>
+        <div id="loading"><img id="loading-img" src="https://svgshare.com/i/SeQ.svg" alt="loading img"></div>
         <div class="title-container">
-            <div class="title"><a href="../index.html">spintos laboratorija</a></div>
-            <div class="title-newsletter" id="newsletter"><a href="naujienlaiskis.html">Naujienlaiškis</a></div>
+            <div id="title"><a href="../index.html">spintos laboratorija</a></div>
+            <div id="menu-btn">
+                <img src="https://img.icons8.com/android/24/000000/menu.png"/>
+            </div>
+            <div class="passive" id="newsletter"><a href="#">Naujienlaiškis</a></div>
         </div>
-        <div class="nav-container">
-            <a href="#" class="nav-item">STILIUS</a>
-            <a href="kultura.html" class="nav-item">KULTŪRA</a>
-            <a href="spinta.html" class="nav-item">SPINTA</a>
-            <a href="dovanu_idejos.html" class="nav-item">DOVANŲ IDĖJOS</a>
-        </div>
+
+        <nav>
+            <ul class="nav-container">
+                <li id="stilius" class="nav-item"><a href="stilius.html">STILIUS</a></li>
+                <li id="kultura" class="nav-item"><a href="kultura.html">KULTŪRA</a></li>
+                <li id="spinta" class="nav-item"><a href="spinta.html">SPINTA</a></li>
+                <li id="dovanu_idejos" class="nav-item"><a href="dovanu_idejos.html">DOVANŲ IDĖJOS</a></li>
+            </ul>
+        </nav>
     </header>
 
     <main>
-            <div class="new-title">STILIUS</div>
-                <div class="new">
-                    <a href="#">
-                        <div class="new-img-container">
-                            <img class="new-img visible" data-src="../images/we see.jpg" alt="we see what we want img">
-                        </div>
-                        <div class="new-text">REALYBĖ YRA TAI, KUO TIKIME</div>
-                    </a>
+        <div class="prime-title"><h1>STILIUS</h1></div>
+        <div class="border-title">Visi</div>
+        <section class="grid-container" data-type="style-articles"></section>
+            
+        <section>
+            <div class="border-title subscribe">
+                <div class="subscribe-text">
+                    Užsisakykite naujausią mūsų rinkinį su <strong>10%</strong> nuolaida
                 </div>
+                <div class="subscribe-a">
+                    <a href="#"><span class="btn"><strong>UŽSISAKYTI</strong></span></a>
+                </div>
+            </div>
+        </section>
     </main>
     
+    <footer>
+        <section class="footer">
+            <div class="footer-about">
+                <div id="footer-title" class="title"><a href="#">spintos laboratorija</a></div>
+                <div class="footer-describtion">Rankų darbo jaukumas šiuolaikiniame mados pasaulyje</div>
+                <ul class="fabs">
+                    <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+                    <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+                    <li><a href="#"><i class="fab fa-instagram"></i></a></li>
+                    <li><a href="#"><i class="fab fa-google"></i></a></li>
+                </ul>
+            </div>
+            <div class="footer-more">
+                <div class="footer-title">
+                    <a href="#" onclick="return false;">
+                        Daugiau iš spintos laboratorijos
+                        <span class="up" hidden><i class="fas fa-caret-up" style="padding-left: 10px"></i></span>
+                        <span class="down" hidden><i class="fas fa-caret-down" style="padding-left: 10px"></i></span>
+                    </a>
+                </div>
+                <ur class="footer-more-list">
+                    <li><a href="#">Naujienlaiškis</a></li>
+                    <li><a href="#">Susisiekite</a></li>
+                    <li><a href="#">Apie spintos laboratoriją</a></li>
+                    <li><a href="#">Bendradarbiaukime</a></li>
+                </ur>
+            </div>
+            <div class="footer-more">
+                <div class="footer-title">
+                    <a href="#" onclick="return false;">
+                        Visos skiltys
+                        <span class="up" hidden><i class="fas fa-caret-up" style="padding-left: 10px"></i></span>
+                        <span class="down" hidden><i class="fas fa-caret-down" style="padding-left: 10px"></i></span>
+                    </a>
+                </div>
+                <ur class="footer-more-list">
+                    <li><a href="#">Stilius</a></li>
+                    <li><a href="#">Kultūra</a></li>
+                    <li><a href="#">Spinta</a></li>
+                    <li><a href="#">Dovanų idėjos</a></li>
+                </ur>
+            </div>
+        </section>
+        <div id="sunnyKK">© 2021 sunnyKK. Visos teisės saugomos.</div>
+    </footer>
 
-    <script src="../behavior.js"></script>
+    <script type="module" src="../behavior.js"></script>
 </body>
 </html>

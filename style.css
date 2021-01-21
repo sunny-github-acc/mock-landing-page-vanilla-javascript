@@ -215,7 +215,7 @@ li {
     grid-template-areas: 
     "g-1 g-2 g-3"
     "g-4 g-2 g-5";
-    grid-template-columns: 2fr 3fr 2fr;
+    grid-template-columns: 2fr 4fr 2fr;
     column-gap: 25px;
     padding: 40px;
     padding-top: 0;
