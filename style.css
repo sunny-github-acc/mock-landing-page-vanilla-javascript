@@ -16,6 +16,8 @@ main {
     position: "relative";
     text-align: center;
     min-width: 300px;
+    padding-top: 120px;
+    padding-bottom: 80px;
 }
 h1 {
     font-size: 40px;
@@ -163,11 +165,43 @@ li {
     }
 }
 
-/* <<<<< MAIN >>>>> */
-main {
-    padding-top: 120px;
-    padding-bottom: 80px;
+/* <<<<< PRIME >>>>> */
+.prime-img-container {
+    width: 60%;
+    padding-right: 20%;
+    padding-left: 20%;
 }
+.prime-img {
+    object-fit: cover;
+    width: 100%;
+}
+.subscribe {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    flex-wrap: wrap;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: center;
+-webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+}
+@media screen and (max-width: 990px) {
+    .subscribe-a {
+        margin: 20px;
+    }   
+}
+@media screen and (max-width: 768px) {
+    .prime-img-container {
+        width: 80%;
+        padding-right: 10%;
+        padding-left: 10%;
+        padding-top: 20px;
+    }   
+}
+
+/* <<<<< MAIN >>>>> */
 .border-title {
     position: relative;
     border-top: 1px rgba(128, 128, 128, 0.24) solid;
@@ -250,43 +284,18 @@ main {
         padding-top: 50px;
         padding-bottom: 30px;
     }
+    .border-title {
+        margin-bottom: 40px;
+    }
+    .grid-container {
+        display: flex;
+        flex-wrap: wrap;
+        padding-top: 0px;
+    }
+    .grid-item {
+        padding-bottom: 40px;
+    }
 }
-/* <<<<< PRIME >>>>> */
-.prime-img-container {
-    width: 60%;
-    padding-right: 20%;
-    padding-left: 20%;
-}
-.prime-img {
-    object-fit: cover;
-    width: 100%;
-}
-.subscribe {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    flex-wrap: wrap;
-    -webkit-box-pack: justify;
-    -ms-flex-pack: justify;
-    justify-content: center;
--webkit-box-align: center;
-    -ms-flex-align: center;
-    align-items: center;
-}
-@media screen and (max-width: 990px) {
-    .subscribe-a {
-        margin: 20px;
-    }   
-}
-@media screen and (max-width: 768px) {
-    .prime-img-container {
-        width: 80%;
-        padding-right: 10%;
-        padding-left: 10%;
-        padding-top: 20px;
-    }   
-}
-
 /* <<<<< LINKS >>>>> */
 .links {
     background-color: rgba(247, 247, 247, 0.815);
