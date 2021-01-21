@@ -164,11 +164,11 @@ li {
 }
 
 /* <<<<< MAIN >>>>> */
-.main {
+main {
     padding-top: 120px;
     padding-bottom: 80px;
 }
-.main-title {
+.border-title {
     position: relative;
     border-top: 1px rgba(128, 128, 128, 0.24) solid;
     border-bottom: 1px rgb(128, 128, 128, 0.24) solid;
@@ -176,36 +176,36 @@ li {
     margin-bottom: 65px;
     font-size: 25px;
 }
-.main-container {
+.grid-container {
     display: grid;
     grid-template-areas: 
-    "m-1 m-2 m-3"
-    "m-4 m-2 m-5";
+    "g-1 g-2 g-3"
+    "g-4 g-2 g-5";
     grid-template-columns: 2fr 3fr 2fr;
     column-gap: 25px;
     padding: 40px;
     padding-top: 0;
     margin-bottom: 20px;
 }
-#main-1 {
-    grid-area: m-1;
+#grid-1 {
+    grid-area: g-1;
 }
-#main-2 {
-    grid-area: m-2;
+#grid-2 {
+    grid-area: g-2;
 }
-#main-3 {
-    grid-area: m-3;
+#grid-3 {
+    grid-area: g-3;
 }
-#main-4 {
-    grid-area: m-4;
+#grid-4 {
+    grid-area: g-4;
 }
-#main-5 {
-    grid-area: m-5;
+#grid-5 {
+    grid-area: g-5;
 }
-.main-item {
+.grid-item {
     object-fit: cover;
 }
-.main-img {
+.grid-img {
     width: 100%;
 }
 .article-title {
@@ -233,10 +233,6 @@ li {
     margin-bottom: 0;  
     font-size: 18px;
 }
-.side-img {
-    max-height: 200px;
-    object-fit: cover;
-}
 #prime-title {
     font-family: 'Playfair Display', serif;
     padding: 10px;
@@ -250,7 +246,7 @@ li {
 }
 
 @media screen and (max-width: 768px) {
-    .main {
+    main {
         padding-top: 50px;
         padding-bottom: 30px;
     }

@@ -29,7 +29,7 @@ function handleLoading() {
 }
 
 function handlePageContent() {
-    document.querySelector(".main-content") ?
+    document.querySelector(".grid-container") ?
         handleContent().then(() => handleWindowLoad()) : 
         null;
 }
