@@ -125,9 +125,11 @@ li {
 }
 .nav-container {
     display: flex;
+    overflow: hidden;
+    -webkit-overflow-scrolling: touch; /* Lets it scroll lazy */
+    min-width: 100%;
     justify-content: center;
     top: 59px;
-    width: 100%;
     font-size: 16px;
     border-top: 0px solid rgb(128, 128, 128);
     box-shadow: 0px 0px 2px .1px gray;
@@ -182,6 +184,7 @@ li {
     transform: translate(-50%, -50%);
 }
 .menu-active {
+    positiodn: fixed;
     top: 0;
     -webkit-transition: all 1s;
     transition: all 1s;
@@ -293,11 +296,6 @@ transform: rotate(315deg);
         margin: 20px;
     }   
 }
-@media screen and (max-width: 768px) {
-    .prime-img-container {
-        padding-top: 70px;
-    }   
-}
 
 /* <<<<< MAIN >>>>> */
 .border-title {
@@ -316,7 +314,6 @@ transform: rotate(315deg);
     grid-template-columns: 2fr 4fr 2fr;
     column-gap: 25px;
     padding: 40px;
-    padding-top: 40px;
     margin-bottom: 20px;
 }
 .grid-container-passive {
@@ -383,7 +380,6 @@ transform: rotate(315deg);
 
 @media screen and (max-width: 768px) {
     main {
-        padding-top: 50px;
         padding-bottom: 30px;
     }
     .border-title {
@@ -392,7 +388,6 @@ transform: rotate(315deg);
     .grid-container {
         display: flex;
         flex-wrap: wrap;
-        padding-top: 0px;
     }
     .grid-item {
         padding-bottom: 40px;
@@ -411,14 +406,22 @@ transform: rotate(315deg);
     padding-left: 10%;
     padding-top: 0px;
     margin-top: -30px;
-    height: auto;
     text-align: left;
+    margin: auto;
+}
+.link-item {
+    padding: 0;
+    margin: 0;
 }
 .link-item a {
-    display: grid;
-    grid-template-columns: 1fr 2fr;
-    column-gap: 20px;
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
     width: 100%;
+}
+.link-img-container {
+    padding: 0;
+    margin: 0;
 }
 .link-img {
     object-fit: cover;
@@ -438,10 +441,13 @@ transform: rotate(315deg);
     margin-top: 0;
 }
 @media screen and (max-width: 768px) {
-.links-container {
-    grid-template-columns: 1fr;
-    row-gap: 20px;
-}
+    .links-container {
+        grid-template-columns: 1fr;
+        row-gap: 20px;
+    }
+    .link-titles {
+        padding-left: 40px;
+    }
 } 
 
 /* <<<<< FOOTER >>>>> */

@@ -18,7 +18,7 @@ window.addEventListener("resize", handleNav);
 window.addEventListener("resize", handleFooter);
 document.addEventListener("scroll", handleIsNav);
 document.addEventListener("scroll", handleIsImg);
-//menuBtn.addEventListener("click", handleMenu);
+menuBtn.addEventListener("click", handleMenu);
 navPage ? navPage.addEventListener("click", handleContentFilter) : null;
 footerMore[0].parentElement.addEventListener("click", handleFooterMore);
 // newsletter.addEventListener("mouseenter", handleShowNewsletter);
