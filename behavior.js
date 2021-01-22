@@ -1,6 +1,7 @@
 'use strict';
 
 import { handleContent } from "./js/content.js";
+import { handleFilterNav } from "./js/nav.js";
 
 let nav = document.body.querySelector(".nav-container"),
     menuBtn = document.body.querySelector(".menu-wrap"),
@@ -22,6 +23,7 @@ footerMore[0].parentElement.addEventListener("click", handleFooterMore);
 function handleWindowLoad() {
     handleIsImg();
     handleNav();
+    handleFilterNav();
     handleFooter();
     handleLoading();
 }
@@ -76,7 +78,7 @@ function handleIsNav(e) {
     if (this.oldScroll < window.scrollY) {
         nav.style.top = 0;
     } else {
-        nav.style.top = 60 + "px";
+        nav.style.top = 59 + "px";
     }
     this.oldScroll = window.scrollY;
 }
@@ -90,7 +92,7 @@ function handleIsImg() {
     function isVisible(img) {
         let coords = img.getBoundingClientRect(),
             windowHeight = document.documentElement.clientHeight,
-            topVisible = coords.top >= 0 && coords.top <= windowHeight,
+            topVisible = coords.top >= 0 && coords.top - 200 <= windowHeight,
             bottomVisible = coords.bottom <= windowHeight && coords.bottom >= 0;
             return topVisible || bottomVisible;
     }

@@ -124,38 +124,29 @@ li {
     font-size: 18px;
 }
 .nav-container {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
-    grid-template-areas: ". elem1 elem2 elem3 elem4 .";
-    position: fixed;
+    display: flex;
+    justify-content: center;
+    top: 59px;
     width: 100%;
-    right: 0px;
-    left: 0px;
-    top: 60px;
-    font-size: 15px;
-    text-align: center;
-    border-bottom: 0px solid rgb(128, 128, 128);
-    box-shadow: 0px 2px 2px -2px gray;
+    font-size: 16px;
+    border-top: 0px solid rgb(128, 128, 128);
+    box-shadow: 0px 0px 2px .1px gray;
+    padding-bottom: 5px;
+    padding-top: 5px;
+    margin-top: 15px;
+}
+.nav-slide {
+    position: fixed;
     -webkit-transition: top 1s ease-in;
     transition: top 1s ease-in;
     background-color: white;
     z-index: 9;
-    padding-bottom: 5px;
-    padding-top: 5px;
-    padding-left: 0;
+    padding-top: 6px;
     margin-top: 0px;
 }
-#stilius {
-    grid-area: elem1;
-}
-#kultura {
-    grid-area: elem2;
-}
-#spinta {
-    grid-area: elem3;
-}
-#dovanu_idejos {
-    grid-area: elem4;
+.nav-container li {
+    margin-left: 30px;
+    margin-right: 30px;
 }
 .nav-item:hover, #newsletter:hover {
     color: black;
@@ -269,7 +260,7 @@ transform: rotate(315deg);
 
 /* <<<<< PRIME >>>>> */
 .prime-img {
-    max-width: 80%;
+    max-width: 90%;
 }
 .subscribe {
     display: -webkit-box;
@@ -314,7 +305,7 @@ transform: rotate(315deg);
     grid-template-columns: 2fr 4fr 2fr;
     column-gap: 25px;
     padding: 40px;
-    padding-top: 0;
+    padding-top: 40px;
     margin-bottom: 20px;
 }
 #grid-1 {
