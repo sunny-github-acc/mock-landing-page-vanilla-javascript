@@ -1,21 +1,25 @@
 'use strict';
 
-import { handleContent } from "./js/content.js";
+import { handleContent as handlePageContent } from "./js/content.js";
 import { handleFilterNav } from "./js/nav.js";
+import { handleContentFilter as handlePageContentFilter,
+         handleNavIsActive } from "./js/content_filter.js";
 
 let nav = document.body.querySelector(".nav-container"),
+    navPage = document.body.querySelector("#nav-page"),
     menuBtn = document.body.querySelector(".menu-wrap"),
     footerMore = document.body.querySelectorAll(".footer-more"),
     newsletter = document.body.querySelector("#newsletter");
     
 window.addEventListener("DOMContentLoaded", handleWindowLoad);
 window.addEventListener("DOMContentLoaded", handleLoading);
-window.addEventListener("DOMContentLoaded", handlePageContent);
+window.addEventListener("DOMContentLoaded", handleContent);
 window.addEventListener("resize", handleNav);
 window.addEventListener("resize", handleFooter);
 document.addEventListener("scroll", handleIsNav);
 document.addEventListener("scroll", handleIsImg);
-menuBtn.addEventListener("click", handleMenu);
+//menuBtn.addEventListener("click", handleMenu);
+navPage ? navPage.addEventListener("click", handleContentFilter) : null;
 footerMore[0].parentElement.addEventListener("click", handleFooterMore);
 // newsletter.addEventListener("mouseenter", handleShowNewsletter);
 // newsletter.addEventListener("mouseleave", handleHideNewsletter);
@@ -32,9 +36,9 @@ function handleLoading() {
     document.body.querySelector("#loading").hidden = true;
 }
 
-function handlePageContent() {
-    document.querySelector(".grid-container") ?
-        handleContent().then(() => handleWindowLoad()) : 
+function handleContent() {
+    document.querySelector("#grid-container") ?
+        handlePageContent().then(() => handleWindowLoad()) : 
         null;
 }
 
@@ -115,6 +119,13 @@ function handleIsImg() {
         }
         
         image.src = src;
+    }
+}
+
+function handleContentFilter(e) {
+    if (handleNavIsActive(e)) {
+        if (e.target.innerHTML === "VISI") handleContent();
+        else handlePageContentFilter(e).then(() => handleWindowLoad());
     }
 }
 
