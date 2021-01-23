@@ -1,7 +1,7 @@
 'use strict';
 
 import { handleContent as handlePageContent } from "./js/content.js";
-import { handleFilterNav } from "./js/nav.js";
+import { handleFilterNav as handlePageFilterNav } from "./js/nav.js";
 import { handleContentFilter as handlePageContentFilter,
          handleNavIsActive } from "./js/content_filter.js";
 
@@ -13,6 +13,7 @@ let nav = document.body.querySelector(".nav-container"),
     
 window.addEventListener("DOMContentLoaded", handleWindowLoad);
 window.addEventListener("DOMContentLoaded", handleLoading);
+window.addEventListener("DOMContentLoaded", handleFilterNav)
 window.addEventListener("DOMContentLoaded", handleContent);
 window.addEventListener("resize", handleNav);
 window.addEventListener("resize", handleFooter);
@@ -27,13 +28,16 @@ footerMore[0].parentElement.addEventListener("click", handleFooterMore);
 function handleWindowLoad() {
     handleIsImg();
     handleNav();
-    handleFilterNav();
     handleFooter();
     handleLoading();
 }
 
 function handleLoading() {
     document.body.querySelector("#loading").hidden = true;
+}
+
+function handleFilterNav() {
+    handlePageFilterNav().then(() => handleWindowLoad());
 }
 
 function handleContent() {
