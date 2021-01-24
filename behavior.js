@@ -5,11 +5,11 @@ import { handleFilterNav as handlePageFilterNav } from "./js/nav.js";
 import { handleContentFilter as handlePageContentFilter,
          handleNavIsActive } from "./js/content_filter.js";
 
-let nav = document.body.querySelector(".nav-container"),
+let nav = document.body.querySelector(".nav-ul"),
     navPage = document.body.querySelector("#nav-page"),
     menuBtn = document.body.querySelector(".menu-wrap"),
     footerMore = document.body.querySelectorAll(".footer-more"),
-    newsletter = document.body.querySelector("#newsletter");
+    newsletter = document.body.querySelector(".newsletter");
     
 window.addEventListener("DOMContentLoaded", handleWindowLoad);
 window.addEventListener("DOMContentLoaded", handleLoading);
@@ -49,15 +49,33 @@ function handleContent() {
 
 function handleNav() {
     if (window.innerWidth > 768) {
-        nav.classList.remove("passive");
-        // menuBtn.classList.add("passive");
-        // newsletter.classList.remove("passive");
+        // nav.classList.remove("passive");
+            nav.classList.remove("nav-menu-ul");
+            nav.classList.remove("menu-passive"); 
+            nav.classList.remove("menu-active"); 
+            nav.classList.add("nav-ul");
+            nav.classList.add("nav-slide");
+            setTimeout(() => nav.style.transition = "all 0s", 0);
+            newsletter.classList.remove("hidden");
+            menuBtn.classList.add("hidden");
     }
     if (window.innerWidth < 768) {
-        nav.classList.add("passive");
-        // newsletter.classList.add("passive");
-        // menuBtn.classList.remove("passive");
+            nav.classList.add("nav-menu-ul");
+            nav.classList.add("menu-passive");
+            nav.classList.remove("nav-ul");
+            nav.classList.remove("nav-slide");
+            nav.classList.remove("nav-ul-top");
+            setTimeout(() => nav.style.transition = "all 1s", 1000)
+            newsletter.classList.add("hidden");
+            menuBtn.classList.remove("hidden");
     }
+}
+function handleMenu() {
+    let menu = document.body.querySelector(".nav-menu-ul");
+    menu.classList.toggle("menu-active");
+    menu.classList.contains("menu-active") ? 
+        document.body.style.overflow = "hidden" : 
+        document.body.style.overflow = ""; 
 }
 
 function handleFooter() {
@@ -83,10 +101,13 @@ function handleFooter() {
 }
 
 function handleIsNav(e) {
+    let nav = document.body.querySelector(".nav-ul");
+    if (!nav) return;
     if (this.oldScroll < window.scrollY) {
-        nav.style.top = 0;
+        nav.classList.add("nav-ul-top");
+        
     } else {
-        nav.style.top = 59 + "px";
+        nav.classList.remove("nav-ul-top");
     }
     this.oldScroll = window.scrollY;
 }
@@ -100,7 +121,7 @@ function handleIsImg() {
     function isVisible(img) {
         let coords = img.getBoundingClientRect(),
             windowHeight = document.documentElement.clientHeight,
-            topVisible = coords.top >= 0 && coords.top - 200 <= windowHeight,
+            topVisible = coords.top >= 0 && coords.top - 500 <= windowHeight,
             bottomVisible = coords.bottom <= windowHeight && coords.bottom >= 0;
             return topVisible || bottomVisible;
     }
@@ -133,13 +154,6 @@ function handleContentFilter(e) {
     }
 }
 
-function handleMenu() {
-    let menu = document.body.querySelector(".menu-nav-container");
-    menu.classList.toggle("menu-active");
-    menu.classList.contains("menu-active") ? 
-        document.body.style.overflow = "hidden" : 
-        document.body.style.overflow = ""; 
-}
 
 function handleFooterMore(e) {
     let elem = e.target.closest("a");
