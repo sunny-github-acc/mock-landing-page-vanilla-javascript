@@ -4,6 +4,7 @@ import { handleContent as handlePageContent } from "./js/content.js";
 import { handleFilterNav as handlePageFilterNav } from "./js/nav.js";
 import { handleContentFilter as handlePageContentFilter,
          handleNavIsActive } from "./js/content_filter.js";
+import { handlePageArticle } from "./js/article_loader.js";
 
 let nav = document.body.querySelector(".nav-ul"),
     navPage = document.body.querySelector("#nav-page"),
@@ -19,6 +20,7 @@ window.addEventListener("resize", handleNav);
 window.addEventListener("resize", handleFooter);
 document.addEventListener("scroll", handleIsNav);
 document.addEventListener("scroll", handleIsImg);
+document.body.addEventListener("click", handleArticle);
 menuBtn.addEventListener("click", handleMenu);
 navPage ? navPage.addEventListener("click", handleContentFilter) : null;
 footerItem[0].parentElement.addEventListener("click", handlefooterItem);
@@ -143,6 +145,10 @@ function handleIsImg() {
         
         image.src = src;
     }
+}
+
+function handleArticle(e) {
+    handlePageArticle(e).then(() => handleWindowLoad());
 }
 
 function handleContentFilter(e) {
