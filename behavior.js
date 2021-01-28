@@ -5,6 +5,7 @@ import { handleFilterNav as handlePageFilterNav } from "./js/nav.js";
 import { handleContentFilter as handlePageContentFilter,
          handleNavIsActive } from "./js/content_filter.js";
 import { handlePageArticle } from "./js/article_loader.js";
+import { handleProducts as handlePageProducts } from "./js/product_loader.js";
 
 let nav = document.body.querySelector(".nav-ul"),
     navPage = document.body.querySelector("#nav-page"),
@@ -16,6 +17,7 @@ window.addEventListener("DOMContentLoaded", handleWindowLoad);
 window.addEventListener("DOMContentLoaded", handleLoading);
 window.addEventListener("DOMContentLoaded", handleFilterNav)
 window.addEventListener("DOMContentLoaded", handleContent);
+window.addEventListener("DOMContentLoaded", handleProducts);
 window.addEventListener("resize", handleNav);
 window.addEventListener("resize", handleFooter);
 document.addEventListener("scroll", handleIsNav);
@@ -46,6 +48,9 @@ function handleContent() {
         null;
 }
 
+function handleProducts() {
+    handlePageProducts().then(() => handleWindowLoad());
+}
 
 function handleNav() {
     if (window.innerWidth > 768) {
