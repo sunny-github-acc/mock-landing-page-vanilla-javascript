@@ -1,15 +1,17 @@
 'use strict';
 
 import { handleContent as handlePageContent } from "./js/content.js";
-import { handleFilterNav as handlePageFilterNav } from "./js/nav.js";
+import { handleFilterNav as handlePageFilterNav } from "./js/nav_loader_secondary.js";
 import { handleContentFilter as handlePageContentFilter,
          handleNavIsActive } from "./js/content_filter.js";
 import { handlePageArticle } from "./js/article_loader.js";
 import { handleProducts as handlePageProducts } from "./js/product_loader.js";
+import { handleBackButtonAnimation } from "./js/back_button_animation.js";
+import { handleBackButton as handlePageBackButton } from "./js/back_button.js";
 
 let nav = document.body.querySelector(".nav-ul"),
     navPage = document.body.querySelector("#nav-page"),
-    menuBtn = document.body.querySelector(".menu-wrap"),
+    menuButton = document.body.querySelector(".menu-wrap"),
     footerItem = document.body.querySelectorAll(".flex-footer-item"),
     newsletter = document.body.querySelector(".newsletter");
     
@@ -23,7 +25,7 @@ window.addEventListener("resize", handleFooter);
 document.addEventListener("scroll", handleIsNav);
 document.addEventListener("scroll", handleIsImg);
 document.body.addEventListener("click", handleArticle);
-menuBtn.addEventListener("click", handleMenu);
+menuButton.addEventListener("click", handleMenu);
 navPage ? navPage.addEventListener("click", handleContentFilter) : null;
 footerItem[0].parentElement.addEventListener("click", handlefooterItem);
 
@@ -54,7 +56,6 @@ function handleProducts() {
 
 function handleNav() {
     if (window.innerWidth > 768) {
-        // nav.classList.remove("passive");
             nav.classList.remove("nav-menu-ul");
             nav.classList.remove("menu-passive"); 
             nav.classList.remove("menu-active"); 
@@ -62,7 +63,7 @@ function handleNav() {
             nav.classList.add("nav-slide");
             setTimeout(() => nav.style.transition = "all 0s", 0);
             newsletter.classList.remove("hidden");
-            menuBtn.classList.add("hidden");
+            menuButton.classList.add("hidden");
     }
     if (window.innerWidth < 768) {
             nav.classList.add("nav-menu-ul");
@@ -72,7 +73,7 @@ function handleNav() {
             nav.classList.remove("nav-ul-top");
             setTimeout(() => nav.style.transition = "all 1s", 1000)
             newsletter.classList.add("hidden");
-            menuBtn.classList.remove("hidden");
+            menuButton.classList.remove("hidden");
     }
 }
 function handleMenu() {
@@ -153,7 +154,22 @@ function handleIsImg() {
 }
 
 function handleArticle(e) {
-    handlePageArticle(e).then(() => handleWindowLoad());
+    handlePageArticle(e)
+        .then(() => handleWindowLoad())
+        .then(() => handleBackButtonAnimation())
+        .then(() => setBackButton());
+}
+
+function setBackButton() {
+    const backButton = document.querySelector(".back-button");
+    if (backButton) backButton.addEventListener("click", handleBackButton);
+}
+
+function handleBackButton(e) {
+    handlePageBackButton(e);
+    navPage = document.body.querySelector("#nav-page")
+    navPage.addEventListener("click", handleContentFilter);
+    console.log('navPage', navPage)
 }
 
 function handleContentFilter(e) {

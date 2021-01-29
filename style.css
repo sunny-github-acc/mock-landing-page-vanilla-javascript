@@ -6,14 +6,12 @@ html {
     background-color: rgb(204, 204, 204);
 }
 * {
-    scroll-behavior: smooth;
     margin: auto;
     padding: 0;
     box-sizing: border-box;
 }
 body {
     font-family: 'Open Sans Condensed', Verdana, Geneva, Tahoma, sans-serif;
-    heights: 100%;
     margin: auto;
     max-width: 1920px;
     min-width: 300px;
@@ -132,10 +130,13 @@ li {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
     overflow: hidden;
     -webkit-overflow-scrolling: touch; 
     width: 100%;
     justify-content: center;
+    align-items: center;
     top: 59px;
     left: 0;
     font-size: 16px;
@@ -309,15 +310,22 @@ transform: rotate(315deg);
     .nav-ul {
         padding: 0;
     }
+    .nav-ul li {
+        padding-top: 5px;
+        padding-bottom: 5px;
+        padding-left: 20px;
+        padding-right: 20px;
+    }
 }
 
 /* <<<<< CONTAINERS && GRIDS && FLEXS >>>>> */
+/* <<<<< CONTAINER>>>>> */
 .container-image-text {
     user-select: none;
     width: 90%;
 }
 .container-image-text div {
-    max-height: 90%;
+    max-height: 100%;
     overflow: hidden;
 }
 .container-image-text img {
@@ -326,7 +334,7 @@ transform: rotate(315deg);
     object-fit: cover;
     padding-top: 40px;
 }
-.container-image-text h1, .flex-2x2-item h1 {
+.container-image-text h1, .flex-2x2 h1 {
     position: relative;
     top: -150px;
     left: 50%;
@@ -334,7 +342,7 @@ transform: rotate(315deg);
     text-align: center;
     background-color: rgba(133, 131, 131, 0.301);
     color: rgb(255, 255, 255);
-    width: 80%;
+    width: 100%;
 }
 .container-image-text h2 {
     width: 90%;
@@ -342,8 +350,11 @@ transform: rotate(315deg);
 .container-image-text h3 {
     max-height: 100%;
     width: 100%;
+    padding-top: 20px;
 }
+/* <<<<< CONTAINER>>>>> */
 .container-article {
+    position: relative;
     padding-top: 40px;
     width: 100%;
     line-height: 35px;
@@ -351,7 +362,7 @@ transform: rotate(315deg);
 .container-article h4 {
     color: rgb(87, 87, 87);
 }
-.container-article h1:after {
+.container-article h1:after, .container-image-text h2:after {
     content: "";
     position: relative;
     width: 20%;
@@ -359,10 +370,10 @@ transform: rotate(315deg);
     content: "";
     display: block;
     border-bottom: 1px solid rgb(87, 87, 87);
-    margin-top: 10px;
+    padding-top: 20px;
 }
 .container-article .details {
-    padding: 30px;
+    padding: 10px;
 }
 .container-article .details h5:last-child {
     color: rgb(124, 124, 124);;
@@ -383,34 +394,43 @@ transform: rotate(315deg);
     padding: 30px;
     text-align: left;
 }
+.container-article .back-button {
+    position: fixed;
+    bottom: 40px;
+    right: 40px;
+    font-size: 40px;
+    cursor: pointer;
+}
+.container-article .no-display {
+    display: none;
+}
+/* <<<<< FLEX >>>>> */
 .flex {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
     flex-wrap: wrap;
 }
-.flex-2x2-item {
+.flex-2x2 {
     width: 45%; 
 }
-.flex-2x2-item img {
+.flex-2x2 img {
     display: block;
     object-fit: scale-down;
     width: 100%;    
 }
-.flex-2x2-item h1 {
+.flex-2x2 h1 {
     width: 100%;
     top: -70px;
     color: rgb(49, 49, 49);
     background-color: rgba(255, 255, 255, 0.301);
 }
 @media screen and (max-width: 768px) {
-    .container-image-text img {
+    .container-image-text {
         width: 100%;
     }
-    .container-image-text h1 {
-        left: 5%;
-        width: 90%;
-        transform: translate( 0, 0 );
+    .container-image-text img {
+        width: 100%;
     }
     .container-image-text h1 strong {
         font-weight: normal;
@@ -421,7 +441,7 @@ transform: rotate(315deg);
     .container-article .content {
         width: 100%;
     }
-    .flex-2x2-item {
+    .flex-2x2 {
         width: 100%;
     }
 } 
@@ -579,9 +599,18 @@ main h1:first-child {
         display: -ms-flexbox;
         display: flex;
         flex-wrap: wrap;
+        padding-left: 0;
+        padding-right: 0;
     }
     .grid-item {
         padding-bottom: 40px;
+    }
+    .grid-item .article-p, .grid-item .article-title {
+        text-align: center;
+    }
+    .article-title:after {
+        width: 20%;
+        margin-left: 40%;
     }
 }
 /* <<<<< OFFER >>>>> */ 
