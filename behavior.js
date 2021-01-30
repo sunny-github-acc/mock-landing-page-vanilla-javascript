@@ -61,7 +61,6 @@ function handleNav() {
             nav.classList.remove("menu-active"); 
             nav.classList.add("nav-ul");
             nav.classList.add("nav-slide");
-            setTimeout(() => nav.style.transition = "all 0s", 0);
             newsletter.classList.remove("hidden");
             menuButton.classList.add("hidden");
     }
@@ -71,7 +70,6 @@ function handleNav() {
             nav.classList.remove("nav-ul");
             nav.classList.remove("nav-slide");
             nav.classList.remove("nav-ul-top");
-            setTimeout(() => nav.style.transition = "all 1s", 1000)
             newsletter.classList.add("hidden");
             menuButton.classList.remove("hidden");
     }
