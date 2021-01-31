@@ -1,33 +1,36 @@
 'use strict';
 
-import { handleContent as handlePageContent } from "./js/content.js";
-import { handleFilterNav as handlePageFilterNav } from "./js/nav_loader_secondary.js";
-import { handleContentFilter as handlePageContentFilter,
-         handleNavIsActive } from "./js/content_filter.js";
-import { handlePageArticle } from "./js/article_loader.js";
-import { handleProducts as handlePageProducts } from "./js/product_loader.js";
-import { handleBackButtonAnimation } from "./js/back_button_animation.js";
-import { handleBackButton as handlePageBackButton } from "./js/back_button.js";
+import { handleLoadArticles as handleLoadPageArticles } from "./js/loader_articles.js";
+import { handleLoadSecondaryNav as handleLoadPageSecondaryNav } from "./js/loader_nav_secondary.js";
+import { handleFilterArticlesByCategory as handleFilterPageArticlesByCategory,
+         handleIsNavActive } from "./js/filter_articles_by_category.js";
+import { handleLoadProducts as handleLoadPageProducts } from "./js/loader_products.js";
+import { handleBackButtonAnimation } from "./js/animation_back_button.js";
+import { handleSelectMain as handleSelectPageMain } from "./js/select_main.js";
+import { handleSelectItem as handleSelectPageItem } from "./js/select_item.js";
+import { handleChangeProductImage } from "./js/change_product_image.js";
 
-let nav = document.body.querySelector(".nav-ul"),
-    navPage = document.body.querySelector("#nav-page"),
+let nav = document.body.querySelector(".nav ul"),
+    secondaryNav = document.body.querySelector("#nav-page .nav-ul"),
     menuButton = document.body.querySelector(".menu-wrap"),
     footerItem = document.body.querySelectorAll(".flex-footer-item"),
-    newsletter = document.body.querySelector(".newsletter");
+    newsletter = document.body.querySelector(".newsletter"),
+    productImage = document.body.querySelector(".product-image");
     
 window.addEventListener("DOMContentLoaded", handleWindowLoad);
 window.addEventListener("DOMContentLoaded", handleLoading);
-window.addEventListener("DOMContentLoaded", handleFilterNav)
-window.addEventListener("DOMContentLoaded", handleContent);
-window.addEventListener("DOMContentLoaded", handleProducts);
+window.addEventListener("DOMContentLoaded", handleLoadSecondaryNav)
+window.addEventListener("DOMContentLoaded", handleLoadArticles);
+window.addEventListener("DOMContentLoaded", handleLoadProducts);
 window.addEventListener("resize", handleNav);
 window.addEventListener("resize", handleFooter);
 document.addEventListener("scroll", handleIsNav);
 document.addEventListener("scroll", handleIsImg);
-document.body.addEventListener("click", handleArticle);
+document.body.addEventListener("click", handleSelectItem);
 menuButton.addEventListener("click", handleMenu);
-navPage ? navPage.addEventListener("click", handleContentFilter) : null;
 footerItem[0].parentElement.addEventListener("click", handlefooterItem);
+if (secondaryNav) secondaryNav.addEventListener("click", handleFilterArticlesByCategory);
+if (productImage) productImage.addEventListener("click", handleChangeProductImage);
 
 function handleWindowLoad() {
     handleIsImg();
@@ -40,18 +43,18 @@ function handleLoading() {
     document.body.querySelector("#loading").hidden = true;
 }
 
-function handleFilterNav() {
-    handlePageFilterNav().then(() => handleWindowLoad());
+function handleLoadSecondaryNav() {
+    handleLoadPageSecondaryNav().then(() => handleWindowLoad());
 }
 
-function handleContent() {
-    document.querySelector("#grid-container") ?
-        handlePageContent().then(() => handleWindowLoad()) : 
-        null;
+function handleLoadArticles() {
+    if (document.querySelector(".articles")) {
+        handleLoadPageArticles().then(() => handleWindowLoad());
+    }
 }
 
-function handleProducts() {
-    handlePageProducts().then(() => handleWindowLoad());
+function handleLoadProducts() {
+    handleLoadPageProducts().then(() => handleWindowLoad());
 }
 
 function handleNav() {
@@ -74,6 +77,7 @@ function handleNav() {
             menuButton.classList.remove("hidden");
     }
 }
+
 function handleMenu() {
     let menu = document.body.querySelector(".nav-menu-ul");
     menu.classList.toggle("menu-active");
@@ -151,8 +155,8 @@ function handleIsImg() {
     }
 }
 
-function handleArticle(e) {
-    handlePageArticle(e)
+function handleSelectItem(e) {
+    handleSelectPageItem(e)
         .then(() => handleWindowLoad())
         .then(() => handleBackButtonAnimation())
         .then(() => setBackButton());
@@ -160,20 +164,30 @@ function handleArticle(e) {
 
 function setBackButton() {
     const backButton = document.querySelector(".back-button");
-    if (backButton) backButton.addEventListener("click", handleBackButton);
+    if (backButton) backButton.addEventListener("click", handleSelectMain);
 }
 
-function handleBackButton(e) {
-    handlePageBackButton(e);
-    navPage = document.body.querySelector("#nav-page")
-    navPage.addEventListener("click", handleContentFilter);
-    console.log('navPage', navPage)
+function handleSelectMain(e) {
+    handleSelectPageMain(e);
+    secondaryNav = document.body.querySelector("#nav-page")
+    if (secondaryNav) secondaryNav.addEventListener("click", handleFilterArticlesByCategory);
 }
 
-function handleContentFilter(e) {
-    if (handleNavIsActive(e)) {
-        if (e.target.innerHTML === "VISI") handleContent();
-        else handlePageContentFilter(e).then(() => handleWindowLoad());
+function handleFilterArticlesByCategory(e) {
+    if (handleIsNavActive(e)) {
+            let section = document.querySelector(".articles");
+        if (e.target.innerHTML === "VISI") {
+            
+            section.classList.add("grid-container");    
+
+            handleLoadPageArticles()
+                .then(() => handleWindowLoad())
+                .then(() => section.classList.remove("flex"));
+        }
+        else handleFilterPageArticlesByCategory(e)
+                .then(() => handleWindowLoad())
+                .then(() => section.classList.add("flex"))
+                .then(() => section.classList.remove("grid-container"))
     }
 }
 
