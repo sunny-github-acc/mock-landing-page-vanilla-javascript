@@ -9,6 +9,8 @@ import { handleBackButtonAnimation } from "./js/animation_back_button.js";
 import { handleSelectMain as handleSelectPageMain } from "./js/select_main.js";
 import { handleSelectItem as handleSelectPageItem } from "./js/select_item.js";
 import { handleChangeProductImage } from "./js/change_product_image.js";
+import { handleScrollContacts } from "./js/scroll_contacts.js";
+import { hide, show } from "./js/resize_contacts.js";
 
 let nav = document.body.querySelector(".nav ul"),
     secondaryNav = document.body.querySelector("#nav-page .nav-ul"),
@@ -22,10 +24,12 @@ window.addEventListener("DOMContentLoaded", handleLoading);
 window.addEventListener("DOMContentLoaded", handleLoadSecondaryNav)
 window.addEventListener("DOMContentLoaded", handleLoadArticles);
 window.addEventListener("DOMContentLoaded", handleLoadProducts);
+window.addEventListener("resize", handleResize);
 window.addEventListener("resize", handleNav);
 window.addEventListener("resize", handleFooter);
 document.addEventListener("scroll", handleIsNav);
 document.addEventListener("scroll", handleIsImg);
+document.addEventListener("scroll", handleScrollContacts);
 document.body.addEventListener("click", handleSelectItem);
 menuButton.addEventListener("click", handleMenu);
 footerItem[0].parentElement.addEventListener("click", handlefooterItem);
@@ -55,6 +59,18 @@ function handleLoadArticles() {
 
 function handleLoadProducts() {
     handleLoadPageProducts().then(() => handleWindowLoad());
+}
+
+function handleResize() {
+    let contacts = document.body.querySelector(".contacts");
+    
+    if (window.innerWidth > 768) {
+        if (contacts) show(contacts);
+    }
+    
+    if (window.innerWidth < 768) {
+        if (contacts) hide(contacts);
+    }
 }
 
 function handleNav() {

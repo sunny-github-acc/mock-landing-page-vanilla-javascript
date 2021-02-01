@@ -426,10 +426,22 @@ transform: rotate(315deg);
     padding: 30px;
     text-align: left;
 }
+.container-item .contacts {
+    position: sticky;
+    position: -webkit-sticky;
+    text-align: left;
+    top: 120px;
+    height: 0;
+    transition: all 1s;
+}
+.container-item .contacts li:nth-child(1) {
+    padding-top: 35px;
+}
 .back-button {
     font-size: 40px;
     cursor: pointer;
     bottom: 40px;
+    width: 40px;
 }
 .back-button.fixed {
     position: fixed;
