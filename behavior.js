@@ -8,7 +8,8 @@ import { handleLoadProducts as handleLoadPageProducts } from "./js/loader_produc
 import { handleBackButtonAnimation } from "./js/animation_back_button.js";
 import { handleSelectMain as handleSelectPageMain } from "./js/select_main.js";
 import { handleSelectItem as handleSelectPageItem } from "./js/select_item.js";
-import { handleChangeProductImage } from "./js/change_product_image.js";
+import { handleChangeProductImage, 
+         handleChangeProductImagesStyles } from "./js/change_product_image.js";
 import { handleScrollContacts } from "./js/scroll_contacts.js";
 import { hide, show } from "./js/resize_contacts.js";
 
@@ -16,8 +17,7 @@ let nav = document.body.querySelector(".nav ul"),
     secondaryNav = document.body.querySelector("#nav-page .nav-ul"),
     menuButton = document.body.querySelector(".menu-wrap"),
     footerItem = document.body.querySelectorAll(".flex-footer-item"),
-    newsletter = document.body.querySelector(".newsletter"),
-    productImage = document.body.querySelector(".product-image");
+    newsletter = document.body.querySelector(".newsletter");
     
 window.addEventListener("DOMContentLoaded", handleWindowLoad);
 window.addEventListener("DOMContentLoaded", handleLoading);
@@ -34,7 +34,6 @@ document.body.addEventListener("click", handleSelectItem);
 menuButton.addEventListener("click", handleMenu);
 footerItem[0].parentElement.addEventListener("click", handlefooterItem);
 if (secondaryNav) secondaryNav.addEventListener("click", handleFilterArticlesByCategory);
-if (productImage) productImage.addEventListener("click", handleChangeProductImage);
 
 function handleWindowLoad() {
     handleIsImg();
@@ -63,14 +62,16 @@ function handleLoadProducts() {
 
 function handleResize() {
     let contacts = document.body.querySelector(".contacts");
-    
+
     if (window.innerWidth > 768) {
         if (contacts) show(contacts);
     }
     
-    if (window.innerWidth < 768) {
+    if (window.innerWidth <= 768) {
         if (contacts) hide(contacts);
     }
+
+    setChangeProductImagesStyles();
 }
 
 function handleNav() {
@@ -150,24 +151,18 @@ function handleIsImg() {
             return topVisible || bottomVisible;
     }
     
-    function setSrc(img) {
-        let src = img.dataset.src,
-            image = document.createElement("img"),
-            temp = document.createElement("img");
-            
-        temp.setAttribute("src", "https://svgshare.com/i/SeQ.svg");
-        img.replaceWith(temp);
-        img.style.opacity = 0;
+    function setSrc(image) {
+        let src = image.dataset.src,
+            tempImage = document.createElement("img");
 
-        image.onload = function(e) {
-            temp.replaceWith(img);
-            img.style.transition = "opacity 1s";
-            img.setAttribute("src", src); 
-            img.classList.remove("not-loaded");
-            setTimeout(() => img.style.opacity = 1);
+        tempImage.onload = function(e) {
+            image.style.transition = "opacity 1s";
+            image.setAttribute("src", src); 
+            image.classList.remove("not-loaded");
+            image.style.opacity = 1
         }
         
-        image.src = src;
+        tempImage.src = src;
     }
 }
 
@@ -175,12 +170,25 @@ function handleSelectItem(e) {
     handleSelectPageItem(e)
         .then(() => handleWindowLoad())
         .then(() => handleBackButtonAnimation())
-        .then(() => setBackButton());
+        .then(() => setBackButton())
+        .then(() => setChangeProductImage())
+        .then(() => setChangeProductImagesStyles());
 }
 
 function setBackButton() {
     const backButton = document.querySelector(".back-button");
     if (backButton) backButton.addEventListener("click", handleSelectMain);
+}
+
+function setChangeProductImage() {
+    const productImage = document.body.querySelector(".product-image-container");
+    if (productImage) productImage.addEventListener("click", handleChangeProductImage);
+}
+
+function setChangeProductImagesStyles() {
+    const productImageActive = document.body.querySelector(".product-image-container .active");
+    const productImagePassive = document.body.querySelector(".product-image-container .passive");
+    handleChangeProductImagesStyles(productImageActive, productImagePassive);
 }
 
 function handleSelectMain(e) {
@@ -203,7 +211,7 @@ function handleFilterArticlesByCategory(e) {
         else handleFilterPageArticlesByCategory(e)
                 .then(() => handleWindowLoad())
                 .then(() => section.classList.add("flex"))
-                .then(() => section.classList.remove("grid-container"))
+                .then(() => section.classList.remove("grid-container"));
     }
 }
 
