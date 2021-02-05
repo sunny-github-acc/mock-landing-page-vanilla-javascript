@@ -11,7 +11,7 @@ import { handleSelectItem as handleSelectPageItem } from "./js/select_item.js";
 import { handleChangeProductImage, 
          handleChangeProductImagesStyles } from "./js/change_product_image.js";
 import { handleScrollContacts } from "./js/scroll_contacts.js";
-import { hide, show } from "./js/resize_contacts.js";
+import { hide, show } from "./js/resize_elements.js";
 
 let nav = document.body.querySelector(".nav ul"),
     secondaryNav = document.body.querySelector("#nav-page .nav-ul"),
@@ -214,5 +214,5 @@ function handlefooterItem(e) {
         up.hidden = !up.hidden;
         down.hidden = !down.hidden;
         list.hidden = !list.hidden;
-    window.scrollBy(0, 300);
+    window.scrollBy(0, 100);
 }
