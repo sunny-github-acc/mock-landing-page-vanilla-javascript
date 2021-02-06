@@ -521,6 +521,10 @@ transform: rotate(315deg);
     margin: 0;
     padding: 2px;
     z-index: 1;
+    opacity: .9;
+}
+.product-image-container .passive:hover {
+    opacity: 1;
 }
 .product-image-container .passive img {
     display: block;   
@@ -554,6 +558,7 @@ transform: rotate(315deg);
 }
 .container-item .product.content {
     text-align: left;
+    width: 50%;
 }
 .container-item .offer-container {
     margin: 20px !important;
@@ -707,6 +712,9 @@ main h1:first-child {
 @media screen and (max-width: 768px) {
     .products .product {
         width: 50%;
+    }
+    .product .misc-container {
+        overflow: hidden;
     }
 }
 .grid-container {
