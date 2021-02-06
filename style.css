@@ -371,10 +371,15 @@ transform: rotate(315deg);
     width: 100%;
     padding-top: 20px;
 }
+@media screen and (max-width: 768px) {
+    .container-image-text img {
+        padding-top: 0px;
+    }
+}
 /* <<<<< CONTAINER >>>>> */
 .container-item {
     position: relative;
-    padding-top: 40px;
+    padding-top: 0px;
     width: 100%;
     line-height: 35px;
 }
@@ -635,7 +640,6 @@ main h1:first-child {
     border-top: 1px rgba(128, 128, 128, 0.24) solid;
     border-bottom: 1px rgb(128, 128, 128, 0.24) solid;
     padding: 15px;
-    margin-bottom: 65px;
     font-size: 25px;
 }
 /* <<<<< PRODUCTS >>>>> */
@@ -787,9 +791,6 @@ main h1:first-child {
     main h1:first-child {
         margin: 20px;
     }
-    .border-title {
-        margin-bottom: 40px;
-    }
     .grid-container {
         display: -webkit-box;
         display: -ms-flexbox;
@@ -850,7 +851,7 @@ main h1:first-child {
     column-gap: 20px;
     padding: 40px;
     padding-left: 10%;
-    padding-top: 0px;
+    padding-top: 40px;
     margin-top: -30px;
     text-align: left;
     margin: auto;
