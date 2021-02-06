@@ -379,7 +379,7 @@ transform: rotate(315deg);
 /* <<<<< CONTAINER >>>>> */
 .container-item {
     position: relative;
-    padding-top: 0px;
+    padding-top: 20px;
     width: 100%;
     line-height: 35px;
 }
@@ -422,7 +422,7 @@ transform: rotate(315deg);
 }
 .container-item .article.content {
     width: 80%;
-    padding-top: 30px;
+    padding-top: 20px;
     padding-bottom: 30px;
     text-align: left;
 }
@@ -449,6 +449,13 @@ transform: rotate(315deg);
     }
     .container-item .image-container.horizontal {
         width: 100%;
+    }
+    .container-item .image-container.vertical  {
+        height: unset;
+    }
+    .container-item .image-container.vertical img  {
+        width: 100%;
+        height: unset;
     }
 }
 /* <<<<< BACK BUTTON >>>>> */
@@ -711,30 +718,55 @@ main h1:first-child {
     column-gap: 25px;
     padding: 40px;
     margin-bottom: 20px;
-    transition: all .5s;
 }
 .articles.flex {
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
+    justify-content: center;
     position: relative;
-    padding-top: 40px;  
     padding-bottom: 100px;  
     margin: 0;
     transition: all .5s;
 }
 .articles.flex .item-select {
-    height: 30vh;    
     width: 30vw;    
+    height: 30vw;    
+    overflow: hidden;
+    padding: 20px;
+    margin: 0;
+}
+.articles.flex .item-select .image-container {
+    height: calc(100% - 50px);
+    overflow: hidden;
 }
 .articles.flex .item-select h2 {
-    margin: 20px
+    line-height: 50px;
 }
-.articles.flex img {
-    width: 100%;
+.articles.flex .item-select.horizontal img {
     height: 100%;
-    object-fit: scale-down;
     display: inline;
+}
+.articles.flex .item-select.vertical img {
+    width: 100%;
+    display: inline;
+}
+.articles.flex .item-select h2 {
+    z-index: 2;
+}
+@media screen and (max-width: 768px) {
+    .articles.flex .item-select {
+        height: auto;    
+        width: 100vw;    
+        overflow: hidden;
+    }
+    .articles.flex .item-select.horizontal img {
+        height: auto;
+        width: 100%;
+    }
+    .articles.flex .item-select .image-container {
+        height: unset;
+    }
 }
 
 #id-1 {
@@ -783,7 +815,6 @@ main h1:first-child {
     margin-bottom: 0;  
     font-size: 18px;
 }
-
 @media screen and (max-width: 768px) {
     main {
         padding-bottom: 30px;
