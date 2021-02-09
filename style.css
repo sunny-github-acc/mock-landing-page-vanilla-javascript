@@ -348,6 +348,9 @@ transform: rotate(315deg);
 
 /* <<<<< CONTAINERS && GRIDS && FLEXS >>>>> */
 /* <<<<< CONTAINER>>>>> */
+.first .container-image-text {
+    padding-top: 60px;
+}
 .container-image-text {
     user-select: none;
     width: 80%;
@@ -387,6 +390,9 @@ transform: rotate(315deg);
     padding-top: 20px;
 }
 @media screen and (max-width: 768px) {
+    .first .container-image-text {
+        padding-top: 100px;
+    }
     .container-image-text img {
         padding-top: 0px;
     }
@@ -394,7 +400,7 @@ transform: rotate(315deg);
 /* <<<<< CONTAINER >>>>> */
 .container-item {
     position: relative;
-    padding-top: 20px;
+    padding-top: 100px;
     width: 100%;
     line-height: 35px;
 }
@@ -488,6 +494,7 @@ transform: rotate(315deg);
     position: sticky;
     text-align: right;
     margin-right: 30px;
+    margin-bottom: 30px;
 }
 
 /* <<<<< PRODUCT IMAGE CONTAINER >>>>> */
