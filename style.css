@@ -479,6 +479,23 @@ transform: rotate(315deg);
         height: unset;
     }
 }
+
+/* <<<<< READ MORE ARTICLES >>>>> */
+.read-more-articles .item-select {
+    width: 50%;
+    height: 50vw;
+}
+.read-more-articles .item-select .image-container {
+    height: calc(50vw - 100px);
+    overflow: hidden;
+}
+.read-more-articles .item-select img.vertical {
+    width: 100%;
+}
+.read-more-articles .item-select img.horizontal {
+    height: 100%;
+}
+
 /* <<<<< BACK BUTTON >>>>> */
 .back-button {
     font-size: 40px;

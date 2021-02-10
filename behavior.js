@@ -1,6 +1,7 @@
 'use strict';
 
-import { handleLoadArticles as handleLoadPageArticles } from "./js/loader_articles.js";
+import { handleLoadArticles as handleLoadPageArticles,
+         handleLoadReadMoreArticles } from "./js/loader_articles.js";
 import { handleLoadSecondaryNav as handleLoadPageSecondaryNav } from "./js/loader_nav_secondary.js";
 import { handleFilterArticlesByCategory as handleFilterPageArticlesByCategory,
          handleIsNavActive } from "./js/filter_articles_by_category.js";
@@ -172,7 +173,8 @@ function handleSelectItem(e) {
         .then(() => handleWindowLoad())
         .then(() => handleBackButtonAnimation())
         .then(() => setBackButton())
-        .then(() => handleChangeProductImagesStyles(e));
+        .then(() => handleChangeProductImagesStyles(e))
+        .then(() => handleLoadReadMoreArticles());
 }
 
 function setBackButton() {
