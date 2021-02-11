@@ -5,7 +5,8 @@ import { handleLoadArticles as handleLoadPageArticles,
 import { handleLoadSecondaryNav as handleLoadPageSecondaryNav } from "./js/loader_nav_secondary.js";
 import { handleFilterArticlesByCategory as handleFilterPageArticlesByCategory,
          handleIsNavActive } from "./js/filter_articles_by_category.js";
-import { handleLoadProducts as handleLoadPageProducts } from "./js/loader_products.js";
+import { handleLoadProducts as handleLoadPageProducts,
+         handleLoadRecommendedProducts } from "./js/loader_products.js";
 import { handleBackButtonAnimation } from "./js/animation_back_button.js";
 import { handleSelectMain as handleSelectPageMain } from "./js/select_main.js";
 import { handleSelectItem as handleSelectPageItem } from "./js/select_item.js";
@@ -176,7 +177,8 @@ function handleSelectItem(e) {
         .then(() => handleBackButtonAnimation())
         .then(() => setBackButton())
         .then(() => handleChangeProductImagesStyles(e))
-        .then(() => handleLoadRecommendedArticles());
+        .then(() => handleLoadRecommendedArticles())
+        .then(() => handleLoadRecommendedProducts());
 }
 
 function setBackButton() {

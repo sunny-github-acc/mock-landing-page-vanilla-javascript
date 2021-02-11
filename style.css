@@ -261,6 +261,13 @@ li {
 .title-container .newsletter {
     font-size: 18px;
 }
+.cart {
+    position: sticky;
+    bottom: 0;
+    left: 20px;
+    text-align: left;
+    padding: 20px
+}
 .menu-wrap .toggler {
     position: absolute;
     top: -30px;
@@ -480,8 +487,8 @@ transform: rotate(315deg);
     }
 }
 
-/* <<<<< READ MORE ARTICLES >>>>> */
-.recommended-articles {
+/* <<<<< RECOMMENDED >>>>> */
+.recommended-articles, .recommended-products {
     padding-bottom: 100px;
 }
 .recommended-articles * {
@@ -492,7 +499,8 @@ transform: rotate(315deg);
     height: 50vw;
     max-height: 960px;
 }
-.recommended-articles .border-title {
+.recommended-articles .border-title,
+.recommended-products .border-title {
     flex: 0 0 100%;
 }
 .recommended-articles .item-select .image-container {
@@ -516,6 +524,12 @@ transform: rotate(315deg);
     font-weight: 1000;
     z-index: 1;
 }
+.recommended-products .item-select {
+    width: 25%
+}
+.recommended-products img {
+    width: 100%;
+}
 @media screen and (max-width: 768px) {
     .recommended-articles .item-select {
         width: 100%;
@@ -525,10 +539,14 @@ transform: rotate(315deg);
         width: 100%;
     }
     .recommended-articles .article-title {
-        top: -80px;
+        top: -110px;
     }
     .article-title h1 {
         font-size: 30px;
+    }
+    .recommended-products .item-select {
+        width: 100%;
+        padding-bottom: 40px;
     }
 }
 
@@ -821,6 +839,9 @@ main h1:first-child {
 .articles.flex .item-select .image-container {
     height: calc(100% - 50px);
     overflow: hidden;
+}
+.item-select h1 {
+    font-size: 3.5vmin;
 }
 .articles.flex .item-select h2 {
     line-height: 50px;
