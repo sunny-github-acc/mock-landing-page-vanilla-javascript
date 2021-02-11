@@ -481,19 +481,55 @@ transform: rotate(315deg);
 }
 
 /* <<<<< READ MORE ARTICLES >>>>> */
-.read-more-articles .item-select {
+.recommended-articles {
+    padding-bottom: 100px;
+}
+.recommended-articles * {
+    text-align: center !important;
+}
+.recommended-articles .item-select {
     width: 50%;
     height: 50vw;
+    max-height: 960px;
 }
-.read-more-articles .item-select .image-container {
-    height: calc(50vw - 100px);
+.recommended-articles .border-title {
+    flex: 0 0 100%;
+}
+.recommended-articles .item-select .image-container {
+    height: 100%;
     overflow: hidden;
 }
-.read-more-articles .item-select img.vertical {
+.recommended-articles .item-select img.vertical {
     width: 100%;
+    margin-top: 50%;
+    transform: translateY(-50%);
 }
-.read-more-articles .item-select img.horizontal {
+.recommended-articles .item-select img.horizontal {
     height: 100%;
+    margin-left: 50%;
+    transform: translateX(-50%);
+}
+.recommended-articles .article-title {
+    position: relative;
+    top: -150px;
+    background-color: rgba(255, 255, 255, 0.5);
+    font-weight: 1000;
+    z-index: 1;
+}
+@media screen and (max-width: 768px) {
+    .recommended-articles .item-select {
+        width: 100%;
+    }
+    .recommended-articles .item-select img.horizontal {
+        height: unset;
+        width: 100%;
+    }
+    .recommended-articles .article-title {
+        top: -80px;
+    }
+    .article-title h1 {
+        font-size: 30px;
+    }
 }
 
 /* <<<<< BACK BUTTON >>>>> */
@@ -792,10 +828,14 @@ main h1:first-child {
 .articles.flex .item-select.horizontal img {
     height: 100%;
     display: inline;
+    margin-left: 50%;
+    transform: translateX(-50%);
 }
 .articles.flex .item-select.vertical img {
     width: 100%;
     display: inline;
+    margin-top: 50%;
+    transform: translateY(-50%);
 }
 .articles.flex .item-select h2 {
     z-index: 2;
@@ -847,7 +887,7 @@ main h1:first-child {
     margin-top: 0;  
     margin-bottom: 10px;  
 }
-.article-title:after {
+.grid-item .article-title:after {
     content: "";
     width: 50%;
     display: block;
@@ -1181,6 +1221,11 @@ main h1:first-child {
 }
 
 /* <<<<< FOOTER >>>>> */
+footer {
+    position: relative;
+    bottom: 0;
+    max-width: 1920px;
+}
 .footer * {
     color: white;
 }

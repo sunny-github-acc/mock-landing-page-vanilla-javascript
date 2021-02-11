@@ -1,7 +1,7 @@
 'use strict';
 
 import { handleLoadArticles as handleLoadPageArticles,
-         handleLoadReadMoreArticles } from "./js/loader_articles.js";
+         handleLoadRecommendedArticles } from "./js/loader_articles.js";
 import { handleLoadSecondaryNav as handleLoadPageSecondaryNav } from "./js/loader_nav_secondary.js";
 import { handleFilterArticlesByCategory as handleFilterPageArticlesByCategory,
          handleIsNavActive } from "./js/filter_articles_by_category.js";
@@ -13,6 +13,7 @@ import { handleChangeProductImage,
          handleChangeProductImagesStyles } from "./js/change_product_image.js";
 import { handleScrollContacts } from "./js/scroll_contacts.js";
 import { hide, show } from "./js/resize_elements.js";
+import { handleScrollBackButton } from "./js/scroll_back_button.js";
 
 let nav = document.body.querySelector(".nav ul"),
     secondaryNav = document.body.querySelector("#nav-page .nav-ul"),
@@ -31,6 +32,7 @@ window.addEventListener("resize", handleFooter);
 document.addEventListener("scroll", handleIsNav);
 document.addEventListener("scroll", handleIsImg);
 document.addEventListener("scroll", handleScrollContacts);
+document.addEventListener("scroll", handleScrollBackButton);
 document.body.addEventListener("click", handleSelectItem);
 document.body.addEventListener("click", handleChangeProductImage);
 menuButton.addEventListener("click", handleMenu);
@@ -174,7 +176,7 @@ function handleSelectItem(e) {
         .then(() => handleBackButtonAnimation())
         .then(() => setBackButton())
         .then(() => handleChangeProductImagesStyles(e))
-        .then(() => handleLoadReadMoreArticles());
+        .then(() => handleLoadRecommendedArticles());
 }
 
 function setBackButton() {
