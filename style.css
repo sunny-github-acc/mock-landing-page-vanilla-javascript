@@ -948,7 +948,7 @@ main h1:first-child {
     .grid-item .article-p, .grid-item .article-title {
         text-align: center;
     }
-    .article-title:after {
+    .grid-item .article-title:after {
         width: 20%;
         margin-left: 40%;
     }
