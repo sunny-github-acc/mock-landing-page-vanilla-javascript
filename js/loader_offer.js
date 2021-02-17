@@ -1,8 +1,6 @@
 let section = document.body.querySelector(".offer");
 
 const loadOffer = () => {
-    if (!section) return;
-
     return `<div class="border-title offer-container">
                 <p>Gaukite <strong>10%</strong> nuolaidą mūsų rankų darbo gaminiams </p>
                 <div class="offer-btn">
@@ -11,4 +9,4 @@ const loadOffer = () => {
             </div>`
 }
 
-section.innerHTML = loadOffer();
+if (section) section.innerHTML = loadOffer();

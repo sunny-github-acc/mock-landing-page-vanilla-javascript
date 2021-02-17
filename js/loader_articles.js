@@ -50,21 +50,22 @@ const displayArticle = articles => {
 }
 
 const displayRecommendedArticles = articles => {
-  let displayArticles = `<div class="border-title">DAUGIAU STRAIPSNIŲ</div>` + 
-        articles.map(article =>
-            `<div id="recommended-id-${article.id}" class="item-select" data-id="${article.id}">
-              <a href="#" data-articles="${section.dataset.articles}" data-id="${article.id}">
-                <div class="image-container">
-                  <img class="not-loaded ${article.orientation}"
-                       data-src="${article.image}" 
-                       alt="${article.alt}">
-                </div>
-                <div class="article-title">
-                  <p class="article-p">${article.category}</p>
-                  <h1>${article.title}</h1>
-                </div>
-              </a>
-            </div>`).join("");
+  let displayArticles = articles[0] ? `<div class="border-title">DAUGIAU STRAIPSNIŲ</div>` : ""; 
+ 
+  displayArticles +=  articles.map(article =>
+    `<div id="recommended-id-${article.id}" class="item-select" data-id="${article.id}">
+      <a href="#" data-articles="${section.dataset.articles}" data-id="${article.id}">
+        <div class="image-container">
+          <img class="not-loaded ${article.orientation}"
+                data-src="${article.image}" 
+                alt="${article.alt}">
+        </div>
+        <div class="article-title">
+          <p class="article-p">${article.category}</p>
+          <h1>${article.title}</h1>
+        </div>
+      </a>
+    </div>`).join("");
     
     section.innerHTML = displayArticles;
 }

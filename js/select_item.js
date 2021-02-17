@@ -4,6 +4,7 @@ let sectionType = section.dataset.data_type;
 let itemType = section.dataset[sectionType];
 let itemID;
 let dataPath = "data/" + sectionType + ".json";
+let tier = getTierPath();
 
 async function handleSelectItem(e) {
     let event = e.target;
@@ -58,53 +59,52 @@ try {
 }
 
 const displayProduct = (item) => {
-    let elements = {};
+    let elements;
     let imageDiv;
     let selected;
-    let cart;
     let recommended;
     
     imageDiv = `<div class="product-image-container-dummy not-visible">
                     <div class="active">
-                        <img class="not-loaded image"
-                        data-src="${item.image}"
+                        <img class="image"
+                        src="${item.image}"
                         alt="${item.alt}">
                     </div>
                     <div class="passive">
-                        <img class="not-loaded image"
-                        data-src="../../images/accessories/2.jpg"
+                        <img class="image"
+                        src="../../images/accessories/2.jpg"
                         alt="${item.alt}">
                     </div>
                 </div>
                 <div class="product-image-container not-visible transition">
                 <div class="image-container passive transition previous">
-                    <img class="not-loaded image transition"
-                    data-src="${item.image}"
+                    <img class="image transition"
+                    src="${item.image}"
                     alt="${item.alt}">
                 </div>
                     <div class="image-container passive transition">
-                        <img class="not-loaded image transition"
-                        data-src="https://images.pexels.com/photos/6461399/pexels-photo-6461399.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=720&w=940"
+                        <img class="image transition"
+                        src="https://images.pexels.com/photos/6461399/pexels-photo-6461399.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=720&w=940"
                         alt="${item.alt}">
                     </div>
                     <div class="image-container passive transition">
-                        <img class="not-loaded image transition"
-                        data-src="${item.image}"
+                        <img class="image transition"
+                        src="${item.image}"
                         alt="${item.alt}">
                     </div>
                     <div class="image-container passive transition">
-                        <img class="not-loaded image transition"
-                        data-src="${item.image}"
+                        <img class="image transition"
+                        src="${item.image}"
                         alt="${item.alt}">
                     </div>
                     <div class="image-container passive transition">
-                        <img class="not-loaded image transition"
-                        data-src="${item.image}"
+                        <img class="image transition"
+                        src="${item.image}"
                         alt="${item.alt}">
                     </div>
                     <div class="image-container passive transition">
-                        <img class="not-loaded image transition"
-                        data-src="${item.image}"
+                        <img class="image transition"
+                        src="${item.image}"
                         alt="${item.alt}">
                     </div>
                     <div class="flex icon"><i class="fas fa-heart"></i></div>
@@ -120,22 +120,14 @@ const displayProduct = (item) => {
                 </div>
                 <div class="price">
                     <h3 class="price">€${Math.round(item.price * Math.random())}.00</h3>
-                </div>
-                <div class="border-title offer-container">
-                    <div class=" cart-button">
-                        <a href="#"><span class="btn"><strong>Į KREPŠELĮ</strong></span></a>
-                    </div>
                 </div>`;
 
     recommended = `<section class="recommended-products flex" data-data_type="articles" data-articles="${itemType}"></section>`;
     
-    cart = `<div class="cart"><a href="naujienlaiskis.html"><i class="fas fa-shopping-cart"></i></a></div>`;
-    
     elements = {
         item,
         imageDiv,
-        recommended,
-        cart
+        recommended
     };
 
     selected = setSelected(elements);
@@ -158,12 +150,6 @@ const displayArticle = (item) => {
                         <h4>Photos provided by Pexels</h4>
                         <h4>February 6th, 2021</h4>
                     <div class="${item.type} content"><h3>${item.content}<h3></div>
-                </div>
-                <div class="border-title offer-container">
-                    <p>Gaukite <strong>10%</strong> nuolaidą mūsų rankų darbo gaminiams </p>
-                    <div class="offer-btn">
-                        <a href="naujienlaiskis.html"><span class="btn"><strong>UŽSISAKYTI</strong></span></a>
-                    </div>
                 </div>`;
 
     recommended = `<section class="recommended-articles flex" data-data_type="articles" data-articles="${itemType}"></section>`;
@@ -193,12 +179,17 @@ function setSelected(elements) {
                         </ul>
                     </div>
                     ${elements.imageDiv}
+                    <div class="border-title offer-container">
+                        <p>Gaukite <strong>10%</strong> nuolaidą mūsų rankų darbo gaminiams </p>
+                        <div class="offer-btn">
+                            <a href="${tier}naujienlaiskis.html"><span class="btn"><strong>UŽSISAKYTI</strong></span></a>
+                        </div>
+                    </div>
                     <div class="${elements.item.type} content"><h3>${elements.item.content}<h3></div>
                     <h4 class="author"><i>${elements.item.author}</i></h4>
                 </div>
                 <div class="back-button fixed not-animated"><i class="fas fa-arrow-circle-left"></i></div>
                 ${elements.recommended}
-                ${elements.cart ? elements.cart : ""}
             </div>`;
 }
 
@@ -210,6 +201,24 @@ function displaySelected(selected) {
     } else {
         main.innerHTML = selected + "<div class='container-item no-display'>" + main.innerHTML + "</div>";
     }
+}
+
+function getTierPath() {
+    let result;
+    switch(Number(section.dataset.tier)) {
+        case 0:
+          result = "pages/";
+          break;
+        case 1:
+          result = "";
+            break;
+        case 2:
+          result = "../";
+          break;
+        default:
+          result = "";
+      }
+      return result;
 }
 
 export { handleSelectItem }

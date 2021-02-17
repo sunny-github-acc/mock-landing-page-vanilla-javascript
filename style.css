@@ -110,12 +110,6 @@ li {
     -webkit-transition: all 1s;
     transition: all 1s;
 }
-
-@media screen and (max-width: 768px) {
-    .padding-top {
-        padding-top: 60px;
-    } 
-}
 /* <<<<< HEADER >>>>> */
 .header-container, .title-container {
     padding-top: 15px;
@@ -608,13 +602,14 @@ transform: rotate(315deg);
     height: 0;
     padding: 0;
     margin: 0;
+    z-index: 222;
 }
 .product-image-container .active img {
     display: block;   
     position: relative;
     width: calc(30vw - 4px);
     max-width: 1720px;  
-    z-index: 2;
+    z-index: 222;
 }
 .product-image-container .passive {
     display: block;   
@@ -625,7 +620,6 @@ transform: rotate(315deg);
     height: 0;
     margin: 0;
     padding: 2px;
-    z-index: 1;
     opacity: .9;
 }
 .product-image-container .passive:hover {

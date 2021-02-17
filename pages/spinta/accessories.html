@@ -4,10 +4,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <link rel="shortcut icon" type="image/x-icon" href="../../images/favicon.png"></link>
     <link rel="stylesheet" href="../../style.css"></link>
-    <link rel="stylesheet" href="/node_modules/@fortawesome/fontawesome-free/css/all.css"></link>
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans+Condensed:wght@300&display=swap" rel="stylesheet"></link>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap" rel="stylesheet"></link>
-    <link href="//db.onlinewebfonts.com/c/2d5f91cbc8faa21103d08ce9d19040d6?family=ChangelingNeoW01-Bold" rel="stylesheet" type="text/css"></link>
+    <link href="https://db.onlinewebfonts.com/c/2d5f91cbc8faa21103d08ce9d19040d6?family=ChangelingNeoW01-Bold" rel="stylesheet" type="text/css"></link>
+    <link href="../../fontawesome-free-5.15.2-web/css/all.css" rel="stylesheet"></link>
     <script src="https://js.cx/libs/animate.js"></script>
     <title>spintos laboratorija</title>
 </head>
@@ -20,11 +20,15 @@
               <input type="checkbox" class="toggler">
               <div class="menu-btn"><div></div></div>
             </div>
-            <div class="newsletter"><a href="../naujienlaiskis.html">Naujienlaiškis</a></div>
+            <div class="newsletter">
+                <a href="../naujienlaiskis.html">Naujienlaiškis </a> / 
+                <a href="#"><i class="fas fa-shopping-cart"></i></a>
+            </div>
         </div>
 
         <nav class="nav">
             <ul class="nav-ul nav-slide">
+                <li class="nav-item nav-item-cart"><a href="#">KREPŠELIS <i class="fas fa-shopping-cart"></i></a></li>
                 <li class="nav-item"><a href="../stilius.html">STILIUS</a></li>
                 <li class="nav-item"><a href="../kultura.html">KULTŪRA</a></li>
                 <li class="nav-item"><a href="../spinta.html">SPINTA</a></li>
@@ -37,9 +41,7 @@
     <main>
         <h1 class="padding-top">AKSESUARAI</h1>
 
-        <section class="flex products" data-data_type="products" data-products="accessories"></section>
-        
-        <div class="cart"><a href="naujienlaiskis.html"><i class="fas fa-shopping-cart"></i></a></div>
+        <section class="flex products" data-data_type="products" data-products="accessories" data-tier="2"></section>
     </main>
     
     <footer></footer>
