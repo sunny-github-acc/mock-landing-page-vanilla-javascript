@@ -10,7 +10,6 @@ html {
     margin: auto;
     padding: 0;
     box-sizing: border-box;
-    scroll-behavior: smooth;
 }
 body {
     font-family: 'Open Sans Condensed', Verdana, Geneva, Tahoma, sans-serif;
@@ -881,6 +880,10 @@ main h1:first-child {
     .articles.flex .item-select.horizontal img {
         height: auto;
         width: 100%;
+    }
+    .articles.flex .item-select.vertical img {
+        margin-top: unset;
+        transform: unset;
     }
     .articles.flex .item-select .image-container {
         height: unset;
