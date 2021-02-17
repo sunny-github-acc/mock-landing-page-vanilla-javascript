@@ -395,7 +395,10 @@ transform: rotate(315deg);
     text-align: center;
     background-color: rgba(133, 131, 131, 0.301);
     color: rgb(255, 255, 255);
-    width: 100%;
+    width: 100%;    
+}
+.container-image-text h1.spinta {
+    margin-bottom: -70px;
 }
 .container-image-text h2 {
     padding-top: 5px;
