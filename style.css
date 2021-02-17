@@ -1,10 +1,6 @@
-@import url(//db.onlinewebfonts.com/c/2d5f91cbc8faa21103d08ce9d19040d6?family=ChangelingNeoW01-Bold);
-
-@font-face {font-family: "ChangelingNeoW01-Bold"; src: url("//db.onlinewebfonts.com/t/2d5f91cbc8faa21103d08ce9d19040d6.eot"); src: url("//db.onlinewebfonts.com/t/2d5f91cbc8faa21103d08ce9d19040d6.eot?#iefix") format("embedded-opentype"), url("//db.onlinewebfonts.com/t/2d5f91cbc8faa21103d08ce9d19040d6.woff2") format("woff2"), url("//db.onlinewebfonts.com/t/2d5f91cbc8faa21103d08ce9d19040d6.woff") format("woff"), url("//db.onlinewebfonts.com/t/2d5f91cbc8faa21103d08ce9d19040d6.ttf") format("truetype"), url("//db.onlinewebfonts.com/t/2d5f91cbc8faa21103d08ce9d19040d6.svg#ChangelingNeoW01-Bold") format("svg"); }
+@font-face {font-family: "ChangelingNeoW01-Bold"; src: url("https://db.onlinewebfonts.com/t/2d5f91cbc8faa21103d08ce9d19040d6.eot"); src: url("https://db.onlinewebfonts.com/t/2d5f91cbc8faa21103d08ce9d19040d6.eot?#iefix") format("embedded-opentype"), url("https://db.onlinewebfonts.com/t/2d5f91cbc8faa21103d08ce9d19040d6.woff2") format("woff2"), url("https://db.onlinewebfonts.com/t/2d5f91cbc8faa21103d08ce9d19040d6.woff") format("woff"), url("https://db.onlinewebfonts.com/t/2d5f91cbc8faa21103d08ce9d19040d6.ttf") format("truetype"), url("https://db.onlinewebfonts.com/t/2d5f91cbc8faa21103d08ce9d19040d6.svg#ChangelingNeoW01-Bold") format("svg"); }
 
 :root {
-    --font: rgb(54, 54, 54);
-    --grey: rgb(163, 162, 162);
     --light-grey: rgb(248, 248, 248);
 }
 html {
@@ -115,6 +111,11 @@ li {
     transition: all 1s;
 }
 
+@media screen and (max-width: 768px) {
+    .padding-top {
+        padding-top: 60px;
+    } 
+}
 /* <<<<< HEADER >>>>> */
 .header-container, .title-container {
     padding-top: 15px;
@@ -170,7 +171,8 @@ li {
     margin-top: 15px;
     max-width: 1920px;
 }
-.nav-ul .nav-item-newsletter {
+.nav-ul .nav-item-newsletter,
+.nav-ul .nav-item-cart {
     display: none;
 }
 .nav-ul-top {
@@ -242,6 +244,8 @@ li {
 .menu-active {
     top: 50%;
     height: 100%;
+    padding-top: 70px;
+    padding-bottom: 70px;
     -webkit-transition: all 1s;
     transition: all 1s;
     z-index: 10;
@@ -262,14 +266,28 @@ li {
     cursor: pointer;
 }
 .title-container .newsletter {
+    display: flex;
+}
+.title-container .newsletter {
     font-size: 18px;
 }
 .cart {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
     position: sticky;
-    bottom: 0;
-    left: 20px;
-    text-align: left;
-    padding: 20px
+    bottom: calc(100vh - 148px);
+    width: 55px;
+    height: 55px;
+    left: 0;
+    margin-bottom: 10px;
+    margin-left: 5px;
+    text-align: right;
+}
+.cart * {
+    transition: all .2s;
+    margin:0px;
 }
 .menu-wrap .toggler {
     position: absolute;
@@ -398,14 +416,6 @@ transform: rotate(315deg);
     max-height: 100%;
     width: 100%;
     padding-top: 20px;
-}
-@media screen and (max-width: 768px) {
-    .first .container-image-text {
-        padding-top: 100px;
-    }
-    .container-image-text img {
-        padding-top: 0px;
-    }
 }
 /* <<<<< CONTAINER >>>>> */
 .container-item {
@@ -792,7 +802,8 @@ main h1:first-child {
     transition: all .2s;
     z-index: 1;
 }
-.product .icon:hover {
+.product .icon:hover, 
+.cart i:hover {
     font-size: 25px;
     transition: all .2s;
 }
