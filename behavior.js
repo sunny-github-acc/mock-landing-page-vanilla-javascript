@@ -158,16 +158,22 @@ function handleIsImg() {
     
     function setSrc(image) {
         let src = image.dataset.src,
-            tempImage = document.createElement("img");
+            tempImage = document.createElement("img"),
+            dummyImage = document.createElement("img");
 
-        tempImage.onload = function(e) {
+        tempImage.setAttribute("src", "https://svgshare.com/i/SeQ.svg");
+        image.replaceWith(tempImage);
+        image.style.opacity = 0;
+
+        dummyImage.onload = function() {
+            tempImage.replaceWith(image);
             image.style.transition = "opacity 1s";
             image.setAttribute("src", src); 
             image.classList.remove("not-loaded");
-            image.style.opacity = 1
+            setTimeout(() => image.style.opacity = 1);
         }
-        
-        tempImage.src = src;
+
+        dummyImage.src = src;
     }
 }
 

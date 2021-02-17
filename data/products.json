@@ -1,0 +1,231 @@
+{
+    "accessories": [
+        {
+        "id": 2,
+        "title": "Rausvi auskarai",
+        "image": "../../images/accessories/2.jpg",
+        "category": "aksesuaras",
+        "price": "100",
+        "alt": "accessory",
+        "content": "<stromg>Mada</strong> <i>(pranc. mode iš lot. modus 'matas, būdas, taisyklė, paprotys, forma, apribojimas')</i> – tai <u>tam tikru laiku visuomenėje vyraujantis stilius</u> <i>(drabužių, papuošalų, kitų aksesuarų, architektūros, maisto, literatūros kūrinių ir kt.)</i>, periodiškai pasikartojantis su tam tikrais pasikeitimais ir patobulinimais. Siauresne prasme – aprangos stiliaus kaita, savo ištakomis siekianti XVII a. Prancūzijos karaliaus dvarą, kurio rengimosi būdas buvo pavyzdžiu kitoms Europos šalims.",        
+        "onSale": "",
+        "oneLeft": "none",
+        "author": "spintos laboratorija",
+        "type": "product"
+        },
+        {
+        "id": 4,
+        "title": "Baltas laikrodis",
+        "image": "../../images/accessories/4.jpg",
+        "category": "aksesuaras",
+        "price": "100",
+        "alt": "accessory",
+        "content": "<stromg>Mada</strong> <i>(pranc. mode iš lot. modus 'matas, būdas, taisyklė, paprotys, forma, apribojimas')</i> – tai <u>tam tikru laiku visuomenėje vyraujantis stilius</u> <i>(drabužių, papuošalų, kitų aksesuarų, architektūros, maisto, literatūros kūrinių ir kt.)</i>, periodiškai pasikartojantis su tam tikrais pasikeitimais ir patobulinimais. Siauresne prasme – aprangos stiliaus kaita, savo ištakomis siekianti XVII a. Prancūzijos karaliaus dvarą, kurio rengimosi būdas buvo pavyzdžiu kitoms Europos šalims.",        
+        "onSale": "none",
+        "oneLeft": "",
+        "author": "spintos laboratorija",
+        "type": "product"
+        },
+        {
+        "id": 5,
+        "title": "Pirato dangalas",
+        "image": "../../images/accessories/5.jpg",
+        "category": "aksesuaras",
+        "price": "100",
+        "alt": "accessory",
+        "content": "<stromg>Mada</strong> <i>(pranc. mode iš lot. modus 'matas, būdas, taisyklė, paprotys, forma, apribojimas')</i> – tai <u>tam tikru laiku visuomenėje vyraujantis stilius</u> <i>(drabužių, papuošalų, kitų aksesuarų, architektūros, maisto, literatūros kūrinių ir kt.)</i>, periodiškai pasikartojantis su tam tikrais pasikeitimais ir patobulinimais. Siauresne prasme – aprangos stiliaus kaita, savo ištakomis siekianti XVII a. Prancūzijos karaliaus dvarą, kurio rengimosi būdas buvo pavyzdžiu kitoms Europos šalims.",        
+        "onSale": "",
+        "oneLeft": "",
+        "author": "spintos laboratorija",
+        "type": "product"
+        },
+        {
+        "id": 6,
+        "title": "Spalvoti karoliukai",
+        "image": "../../images/accessories/6.jpg",
+        "category": "aksesuaras",
+        "price": "100",
+        "alt": "accessory",
+        "content": "<stromg>Mada</strong> <i>(pranc. mode iš lot. modus 'matas, būdas, taisyklė, paprotys, forma, apribojimas')</i> – tai <u>tam tikru laiku visuomenėje vyraujantis stilius</u> <i>(drabužių, papuošalų, kitų aksesuarų, architektūros, maisto, literatūros kūrinių ir kt.)</i>, periodiškai pasikartojantis su tam tikrais pasikeitimais ir patobulinimais. Siauresne prasme – aprangos stiliaus kaita, savo ištakomis siekianti XVII a. Prancūzijos karaliaus dvarą, kurio rengimosi būdas buvo pavyzdžiu kitoms Europos šalims.",        
+        "onSale": "none",
+        "oneLeft": "none",
+        "author": "spintos laboratorija",
+        "type": "product"
+        },
+        {
+        "id": 7,
+        "title": "Auskarų karoliai",
+        "image": "../../images/accessories/7.jpg",
+        "category": "aksesuaras",
+        "price": "100",
+        "alt": "accessory",
+        "content": "<stromg>Mada</strong> <i>(pranc. mode iš lot. modus 'matas, būdas, taisyklė, paprotys, forma, apribojimas')</i> – tai <u>tam tikru laiku visuomenėje vyraujantis stilius</u> <i>(drabužių, papuošalų, kitų aksesuarų, architektūros, maisto, literatūros kūrinių ir kt.)</i>, periodiškai pasikartojantis su tam tikrais pasikeitimais ir patobulinimais. Siauresne prasme – aprangos stiliaus kaita, savo ištakomis siekianti XVII a. Prancūzijos karaliaus dvarą, kurio rengimosi būdas buvo pavyzdžiu kitoms Europos šalims.",        
+        "onSale": "none",
+        "oneLeft": "none",
+        "author": "spintos laboratorija",
+        "type": "product"
+        },
+        {
+        "id": 8,
+        "title": "Jūreiviškas laikrodis",
+        "image": "../../images/accessories/8.jpg",
+        "category": "aksesuaras",
+        "price": "100",
+        "alt": "accessory",
+        "content": "<stromg>Mada</strong> <i>(pranc. mode iš lot. modus 'matas, būdas, taisyklė, paprotys, forma, apribojimas')</i> – tai <u>tam tikru laiku visuomenėje vyraujantis stilius</u> <i>(drabužių, papuošalų, kitų aksesuarų, architektūros, maisto, literatūros kūrinių ir kt.)</i>, periodiškai pasikartojantis su tam tikrais pasikeitimais ir patobulinimais. Siauresne prasme – aprangos stiliaus kaita, savo ištakomis siekianti XVII a. Prancūzijos karaliaus dvarą, kurio rengimosi būdas buvo pavyzdžiu kitoms Europos šalims.",        
+        "onSale": "none",
+        "oneLeft": "none",
+        "author": "spintos laboratorija",
+        "type": "product"
+        }
+    ],
+    "skirts": [
+        {
+        "id": 2,
+        "title": "Ilgas sijonas",
+        "image": "../../images/skirts/2.jpg",
+        "category": "sijonėlis",
+        "price": "100",
+        "alt": "accessory",
+        "content": "<stromg>Mada</strong> <i>(pranc. mode iš lot. modus 'matas, būdas, taisyklė, paprotys, forma, apribojimas')</i> – tai <u>tam tikru laiku visuomenėje vyraujantis stilius</u> <i>(drabužių, papuošalų, kitų aksesuarų, architektūros, maisto, literatūros kūrinių ir kt.)</i>, periodiškai pasikartojantis su tam tikrais pasikeitimais ir patobulinimais. Siauresne prasme – aprangos stiliaus kaita, savo ištakomis siekianti XVII a. Prancūzijos karaliaus dvarą, kurio rengimosi būdas buvo pavyzdžiu kitoms Europos šalims.",        
+        "onSale": "",
+        "oneLeft": "none",
+        "author": "spintos laboratorija",
+        "type": "product"
+        },
+        {
+        "id": 4,
+        "title": "Baltas sijonėlis",
+        "image": "../../images/skirts/4.jpg",
+        "category": "sijonėlis",
+        "price": "100",
+        "alt": "accessory",
+        "content": "<stromg>Mada</strong> <i>(pranc. mode iš lot. modus 'matas, būdas, taisyklė, paprotys, forma, apribojimas')</i> – tai <u>tam tikru laiku visuomenėje vyraujantis stilius</u> <i>(drabužių, papuošalų, kitų aksesuarų, architektūros, maisto, literatūros kūrinių ir kt.)</i>, periodiškai pasikartojantis su tam tikrais pasikeitimais ir patobulinimais. Siauresne prasme – aprangos stiliaus kaita, savo ištakomis siekianti XVII a. Prancūzijos karaliaus dvarą, kurio rengimosi būdas buvo pavyzdžiu kitoms Europos šalims.",        
+        "onSale": "none",
+        "oneLeft": "",
+        "author": "spintos laboratorija",
+        "type": "product"
+        },
+        {
+        "id": 5,
+        "title": "Pilkas sijonėlis",
+        "image": "../../images/skirts/5.jpg",
+        "category": "sijonėlis",
+        "price": "100",
+        "alt": "accessory",
+        "content": "<stromg>Mada</strong> <i>(pranc. mode iš lot. modus 'matas, būdas, taisyklė, paprotys, forma, apribojimas')</i> – tai <u>tam tikru laiku visuomenėje vyraujantis stilius</u> <i>(drabužių, papuošalų, kitų aksesuarų, architektūros, maisto, literatūros kūrinių ir kt.)</i>, periodiškai pasikartojantis su tam tikrais pasikeitimais ir patobulinimais. Siauresne prasme – aprangos stiliaus kaita, savo ištakomis siekianti XVII a. Prancūzijos karaliaus dvarą, kurio rengimosi būdas buvo pavyzdžiu kitoms Europos šalims.",        
+        "onSale": "",
+        "oneLeft": "",
+        "author": "spintos laboratorija",
+        "type": "product"
+        },
+        {
+        "id": 7,
+        "title": "Itin ilgas sijonas",
+        "image": "../../images/skirts/7.jpg",
+        "category": "sijonėlis",
+        "price": "100",
+        "alt": "accessory",
+        "content": "<stromg>Mada</strong> <i>(pranc. mode iš lot. modus 'matas, būdas, taisyklė, paprotys, forma, apribojimas')</i> – tai <u>tam tikru laiku visuomenėje vyraujantis stilius</u> <i>(drabužių, papuošalų, kitų aksesuarų, architektūros, maisto, literatūros kūrinių ir kt.)</i>, periodiškai pasikartojantis su tam tikrais pasikeitimais ir patobulinimais. Siauresne prasme – aprangos stiliaus kaita, savo ištakomis siekianti XVII a. Prancūzijos karaliaus dvarą, kurio rengimosi būdas buvo pavyzdžiu kitoms Europos šalims.",        
+        "onSale": "none",
+        "oneLeft": "none",
+        "author": "spintos laboratorija",
+        "type": "product"
+        }
+    ],
+    "blouses": [
+        {
+        "id": 3,
+        "title": "Raudona palaidinė",
+        "image": "../../images/blouses/3.jpg",
+        "category": "sijonėlis",
+        "price": "100",
+        "alt": "accessory",
+        "content": "<stromg>Mada</strong> <i>(pranc. mode iš lot. modus 'matas, būdas, taisyklė, paprotys, forma, apribojimas')</i> – tai <u>tam tikru laiku visuomenėje vyraujantis stilius</u> <i>(drabužių, papuošalų, kitų aksesuarų, architektūros, maisto, literatūros kūrinių ir kt.)</i>, periodiškai pasikartojantis su tam tikrais pasikeitimais ir patobulinimais. Siauresne prasme – aprangos stiliaus kaita, savo ištakomis siekianti XVII a. Prancūzijos karaliaus dvarą, kurio rengimosi būdas buvo pavyzdžiu kitoms Europos šalims.",        
+        "onSale": "",
+        "oneLeft": "none",
+        "author": "spintos laboratorija",
+        "type": "product"
+        },
+        {
+        "id": 4,
+        "title": "Marga palaidinė",
+        "image": "../../images/blouses/4.jpg",
+        "category": "sijonėlis",
+        "price": "100",
+        "alt": "accessory",
+        "content": "<stromg>Mada</strong> <i>(pranc. mode iš lot. modus 'matas, būdas, taisyklė, paprotys, forma, apribojimas')</i> – tai <u>tam tikru laiku visuomenėje vyraujantis stilius</u> <i>(drabužių, papuošalų, kitų aksesuarų, architektūros, maisto, literatūros kūrinių ir kt.)</i>, periodiškai pasikartojantis su tam tikrais pasikeitimais ir patobulinimais. Siauresne prasme – aprangos stiliaus kaita, savo ištakomis siekianti XVII a. Prancūzijos karaliaus dvarą, kurio rengimosi būdas buvo pavyzdžiu kitoms Europos šalims.",        
+        "onSale": "none",
+        "oneLeft": "",
+        "author": "spintos laboratorija",
+        "type": "product"
+        }
+    ],
+    "shirts": [
+        {
+        "id": 2,
+        "title": "\"Vienas namuose\"",
+        "image": "../../images/shirts/2.jpg",
+        "category": "marškinėliai",
+        "price": "100",
+        "alt": "accessory",
+        "content": "<stromg>Mada</strong> <i>(pranc. mode iš lot. modus 'matas, būdas, taisyklė, paprotys, forma, apribojimas')</i> – tai <u>tam tikru laiku visuomenėje vyraujantis stilius</u> <i>(drabužių, papuošalų, kitų aksesuarų, architektūros, maisto, literatūros kūrinių ir kt.)</i>, periodiškai pasikartojantis su tam tikrais pasikeitimais ir patobulinimais. Siauresne prasme – aprangos stiliaus kaita, savo ištakomis siekianti XVII a. Prancūzijos karaliaus dvarą, kurio rengimosi būdas buvo pavyzdžiu kitoms Europos šalims.",        
+        "onSale": "",
+        "oneLeft": "none",
+        "author": "spintos laboratorija",
+        "type": "product"
+        },
+        {
+        "id": 3,
+        "title": "Juodi marškinėliai",
+        "image": "../../images/shirts/3.jpg",
+        "category": "marškinėliai",
+        "price": "100",
+        "alt": "accessory",
+        "content": "<stromg>Mada</strong> <i>(pranc. mode iš lot. modus 'matas, būdas, taisyklė, paprotys, forma, apribojimas')</i> – tai <u>tam tikru laiku visuomenėje vyraujantis stilius</u> <i>(drabužių, papuošalų, kitų aksesuarų, architektūros, maisto, literatūros kūrinių ir kt.)</i>, periodiškai pasikartojantis su tam tikrais pasikeitimais ir patobulinimais. Siauresne prasme – aprangos stiliaus kaita, savo ištakomis siekianti XVII a. Prancūzijos karaliaus dvarą, kurio rengimosi būdas buvo pavyzdžiu kitoms Europos šalims.",        
+        "onSale": "none",
+        "oneLeft": "none",
+        "author": "spintos laboratorija",
+        "type": "product"
+        },
+        {
+        "id": 4,
+        "title": "Tropikų marškinėliai",
+        "image": "../../images/shirts/4.jpg",
+        "category": "marškinėliai",
+        "price": "100",
+        "alt": "accessory",
+        "content": "<stromg>Mada</strong> <i>(pranc. mode iš lot. modus 'matas, būdas, taisyklė, paprotys, forma, apribojimas')</i> – tai <u>tam tikru laiku visuomenėje vyraujantis stilius</u> <i>(drabužių, papuošalų, kitų aksesuarų, architektūros, maisto, literatūros kūrinių ir kt.)</i>, periodiškai pasikartojantis su tam tikrais pasikeitimais ir patobulinimais. Siauresne prasme – aprangos stiliaus kaita, savo ištakomis siekianti XVII a. Prancūzijos karaliaus dvarą, kurio rengimosi būdas buvo pavyzdžiu kitoms Europos šalims.",        
+        "onSale": "none",
+        "oneLeft": "",
+        "author": "spintos laboratorija",
+        "type": "product"
+        },
+        {
+        "id": 5,
+        "title": "Leopardiniai marškinėliai",
+        "image": "../../images/shirts/5.jpg",
+        "category": "marškinėliai",
+        "price": "100",
+        "alt": "accessory",
+        "content": "<stromg>Mada</strong> <i>(pranc. mode iš lot. modus 'matas, būdas, taisyklė, paprotys, forma, apribojimas')</i> – tai <u>tam tikru laiku visuomenėje vyraujantis stilius</u> <i>(drabužių, papuošalų, kitų aksesuarų, architektūros, maisto, literatūros kūrinių ir kt.)</i>, periodiškai pasikartojantis su tam tikrais pasikeitimais ir patobulinimais. Siauresne prasme – aprangos stiliaus kaita, savo ištakomis siekianti XVII a. Prancūzijos karaliaus dvarą, kurio rengimosi būdas buvo pavyzdžiu kitoms Europos šalims.",        
+        "onSale": "",
+        "oneLeft": "",
+        "author": "spintos laboratorija",
+        "type": "product"
+        },
+        {
+        "id": 6,
+        "title": "Juodi marškinėliai",
+        "image": "../../images/shirts/6.jpg",
+        "category": "marškinėliai",
+        "price": "100",
+        "alt": "accessory",
+        "content": "<stromg>Mada</strong> <i>(pranc. mode iš lot. modus 'matas, būdas, taisyklė, paprotys, forma, apribojimas')</i> – tai <u>tam tikru laiku visuomenėje vyraujantis stilius</u> <i>(drabužių, papuošalų, kitų aksesuarų, architektūros, maisto, literatūros kūrinių ir kt.)</i>, periodiškai pasikartojantis su tam tikrais pasikeitimais ir patobulinimais. Siauresne prasme – aprangos stiliaus kaita, savo ištakomis siekianti XVII a. Prancūzijos karaliaus dvarą, kurio rengimosi būdas buvo pavyzdžiu kitoms Europos šalims.",        
+        "onSale": "none",
+        "oneLeft": "none",
+        "author": "spintos laboratorija",
+        "type": "product"
+        }
+    ]
+}
