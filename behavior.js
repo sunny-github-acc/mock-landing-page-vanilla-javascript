@@ -15,6 +15,7 @@ import { handleChangeProductImage,
 import { handleScrollContacts } from "./js/scroll_contacts.js";
 import { hide, show } from "./js/resize_elements.js";
 import { handleScrollBackButton } from "./js/scroll_back_button.js";
+import { handleFooterItems } from "./js/loader_footer_items.js";
 
 let nav = document.body.querySelector(".nav ul"),
     secondaryNav = document.body.querySelector("#nav-page .nav-ul"),
@@ -37,7 +38,7 @@ document.addEventListener("scroll", handleScrollBackButton);
 document.body.addEventListener("click", handleSelectItem);
 document.body.addEventListener("click", handleChangeProductImage);
 menuButton.addEventListener("click", handleMenu);
-footerItem[0].parentElement.addEventListener("click", handlefooterItem);
+footerItem[0].parentElement.addEventListener("click", handleFooterItems);
 if (secondaryNav) secondaryNav.addEventListener("click", handleFilterArticlesByCategory);
 
 function handleWindowLoad() {
@@ -216,15 +217,3 @@ function handleFilterArticlesByCategory(e) {
     }
 }
 
-
-function handlefooterItem(e) {
-    let elem = e.target.closest("a");
-    if (elem === null || elem.closest(".flex-footer-item-title") === null || window.innerWidth > 768) return;
-    let up = elem.querySelector(".up"),
-        down = elem.querySelector(".down"),
-        list = elem.parentNode.parentNode.querySelector(".flex-footer-item-list");
-        up.hidden = !up.hidden;
-        down.hidden = !down.hidden;
-        list.hidden = !list.hidden;
-    window.scrollBy(0, 100);
-}
