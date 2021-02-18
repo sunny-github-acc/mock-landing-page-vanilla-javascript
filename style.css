@@ -581,7 +581,7 @@ transform: rotate(315deg);
 .product-image-container-dummy {
     position: absolute;
     width: 30vw;
-    left: -9999px;
+    top: -9999px;
     max-width: 1720px;
 }
 .product-image-container-dummy .active img {
@@ -626,6 +626,7 @@ transform: rotate(315deg);
 }
 .product-image-container .passive:hover {
     opacity: 1;
+    cursor: pointer;
 }
 .product-image-container .passive img {
     display: block;   

@@ -42,7 +42,7 @@ const displayFilteredArticles = items => {
     return displayArticles.join("");
 }
 
-function handleIsNavActive(e) {
+function isNavActive(e) {
   if (e.target.tagName != "A") return;
   if (document.body.querySelector(".nav-page-item.active") === e.target.parentElement) return;
   e.preventDefault();
@@ -55,4 +55,4 @@ function handleIsNavActive(e) {
   return true;  
 }
 
-export { handleFilterArticlesByCategory, handleIsNavActive }
+export { handleFilterArticlesByCategory, isNavActive }
