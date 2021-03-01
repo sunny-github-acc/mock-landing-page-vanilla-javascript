@@ -187,10 +187,9 @@ function setSelected(elements) {
                     </div>
                     <div class="${elements.item.type} content"><h3>${elements.item.content}<h3></div>
                     <h4 class="author"><i>${elements.item.author}</i></h4>
-                </div> 
+                </div>
                 ${elements.recommended}
                 <div class="back-button fixed not-animated"><i class="fas fa-arrow-circle-left"></i></div>
-               
             </div>`;
 }
 
