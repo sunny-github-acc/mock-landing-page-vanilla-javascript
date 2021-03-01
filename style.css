@@ -566,6 +566,7 @@ transform: rotate(315deg);
     bottom: 40px;
     width: 40px;
     z-index: 9;
+    right: 30px;
 }
 .back-button.fixed {
     position: fixed;

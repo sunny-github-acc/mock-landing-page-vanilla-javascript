@@ -3,16 +3,21 @@ function handleBackButtonAnimation() {
     
     if (button === null) return;
     if (!button.classList.contains("not-animated")) return;
+
     button.classList.remove("not-animated");
 
     let timeout = 1500;
-    if (window.innerWidth > 1920) timeout = 0;
+    let delay = 100;
+
+    if (window.innerWidth < 1025 || window.innerWidth > 1920) timeout = delay = 0;
 
     setTimeout(() => {
         button.classList.remove("fixed");
         button.classList.add("sticky");
         button.style.top = "-1px";
-    }, timeout + 100);
+    }, timeout + delay);
+
+    if (!timeout) return;
 
     let height = document.body.clientHeight - 80;
     let width = 30;
